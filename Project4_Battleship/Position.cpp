@@ -15,7 +15,7 @@
 #include "Position.h"
 #include "utility.h"
 
-//hello
+
 
 Position::Position() {
     row = 0;
