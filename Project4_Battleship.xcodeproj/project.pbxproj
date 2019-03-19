@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		826101602240A5AE00F8222B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8261015F2240A5AE00F8222B /* main.cpp */; };
+		826101742240A5BE00F8222B /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826101692240A5BD00F8222B /* utility.cpp */; };
+		826101752240A5BE00F8222B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8261016B2240A5BD00F8222B /* Player.cpp */; };
+		826101762240A5BE00F8222B /* battleship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8261016C2240A5BD00F8222B /* battleship.cpp */; };
+		826101772240A5BE00F8222B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8261016F2240A5BD00F8222B /* Game.cpp */; };
+		826101782240A5BE00F8222B /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826101702240A5BD00F8222B /* Ship.cpp */; };
+		826101792240A5BE00F8222B /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826101722240A5BD00F8222B /* test.cpp */; };
+		8261017A2240A5BE00F8222B /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826101732240A5BE00F8222B /* Position.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +30,20 @@
 
 /* Begin PBXFileReference section */
 		8261015C2240A5AE00F8222B /* Project4_Battleship */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project4_Battleship; sourceTree = BUILT_PRODUCTS_DIR; };
-		8261015F2240A5AE00F8222B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		826101662240A5BC00F8222B /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
+		826101672240A5BC00F8222B /* grid1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grid1.txt; sourceTree = "<group>"; };
+		826101682240A5BC00F8222B /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
+		826101692240A5BD00F8222B /* utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
+		8261016A2240A5BD00F8222B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		8261016B2240A5BD00F8222B /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		8261016C2240A5BD00F8222B /* battleship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = battleship.cpp; sourceTree = "<group>"; };
+		8261016D2240A5BD00F8222B /* grid2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grid2.txt; sourceTree = "<group>"; };
+		8261016E2240A5BD00F8222B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		8261016F2240A5BD00F8222B /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		826101702240A5BD00F8222B /* Ship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ship.cpp; sourceTree = "<group>"; };
+		826101712240A5BD00F8222B /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
+		826101722240A5BD00F8222B /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		826101732240A5BE00F8222B /* Position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +76,20 @@
 		8261015E2240A5AE00F8222B /* Project4_Battleship */ = {
 			isa = PBXGroup;
 			children = (
-				8261015F2240A5AE00F8222B /* main.cpp */,
+				8261016C2240A5BD00F8222B /* battleship.cpp */,
+				8261016F2240A5BD00F8222B /* Game.cpp */,
+				8261016A2240A5BD00F8222B /* Game.h */,
+				826101672240A5BC00F8222B /* grid1.txt */,
+				8261016D2240A5BD00F8222B /* grid2.txt */,
+				8261016B2240A5BD00F8222B /* Player.cpp */,
+				8261016E2240A5BD00F8222B /* Player.h */,
+				826101732240A5BE00F8222B /* Position.cpp */,
+				826101712240A5BD00F8222B /* Position.h */,
+				826101702240A5BD00F8222B /* Ship.cpp */,
+				826101682240A5BC00F8222B /* Ship.h */,
+				826101722240A5BD00F8222B /* test.cpp */,
+				826101692240A5BD00F8222B /* utility.cpp */,
+				826101662240A5BC00F8222B /* utility.h */,
 			);
 			path = Project4_Battleship;
 			sourceTree = "<group>";
@@ -118,7 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				826101602240A5AE00F8222B /* main.cpp in Sources */,
+				826101752240A5BE00F8222B /* Player.cpp in Sources */,
+				826101762240A5BE00F8222B /* battleship.cpp in Sources */,
+				826101742240A5BE00F8222B /* utility.cpp in Sources */,
+				826101772240A5BE00F8222B /* Game.cpp in Sources */,
+				826101782240A5BE00F8222B /* Ship.cpp in Sources */,
+				8261017A2240A5BE00F8222B /* Position.cpp in Sources */,
+				826101792240A5BE00F8222B /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
