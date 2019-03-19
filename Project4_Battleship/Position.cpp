@@ -15,7 +15,7 @@
 #include "Position.h"
 #include "utility.h"
 
-
+//git sucks 
 
 Position::Position() {
     row = 0;
