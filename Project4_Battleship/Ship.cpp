@@ -4,12 +4,12 @@
  * Ship.cpp
  * Project UID 4cd2d66df3154b6c8b0ff27aa6791edb
  *
- * <#Name#>
- * <#Uniqname#>
+ * Sameer Ali & Yaozong Huang
+ * samali & yaozongh
  *
  * Project 4: Battleship
  *
- * <#description#>
+ * Ship implementation **FIXME**
  */
 
 #include <cmath>
@@ -18,7 +18,10 @@
 
 
 Ship::Ship() {
-    // TODO: write implementation here.
+    Position start;
+    Position end;
+    num_hits = 0;
+    size = 0;
 }
 
 Ship::Ship(Position start_in, Position end_in) {
