@@ -100,9 +100,8 @@ bool Player::position_not_hit(Position pos) {
 void Player::attack(Player &opponent, Position pos) {
     int rowVal = pos.get_row();
     int colVal = pos.get_col();
-    char boardValue = grid[rowVal][colVal];
     int shipSize = opponent.ships[MAX_NUM_SHIPS].get_size();
-    if (opponent.position_not_hit(pos) && (opponent.ships[MAX_NUM_SHIPS].has_position())) {
+    if (opponent.position_not_hit(pos) && (opponent.ships[MAX_NUM_SHIPS].has_position(pos))) {
         opponent.ships[MAX_NUM_SHIPS].hit();
         opponent.grid[rowVal][colVal] = HIT_LETTER;
         opponent_grid[rowVal][colVal] = HIT_LETTER;
