@@ -101,8 +101,22 @@ void Player::attack(Player &opponent, Position pos) {
     int rowVal = pos.get_row();
     int colVal = pos.get_col();
     char boardValue = grid[rowVal][colVal];
-    if (!(boardValue == HIT_LETTER) && (boardValue == SHIP_LETTER)) {
+    int shipSize = opponent.ships[MAX_NUM_SHIPS].get_size();
+    if (opponent.position_not_hit(pos) && (opponent.ships[MAX_NUM_SHIPS].has_position())) {
+        opponent.ships[MAX_NUM_SHIPS].hit();
+        opponent.grid[rowVal][colVal] = HIT_LETTER;
+        opponent_grid[rowVal][colVal] = HIT_LETTER;
+        cout << name << pos << "hit";
+        if (opponent.ships[MAX_NUM_SHIPS].has_sunk()) {
+            opponent.remaining_ships -= 1;
+            announce_ship_sunk(shipSize);
+        }
         
+    }
+    else {
+        opponent.grid[rowVal][colVal] = MISS_LETTER;
+        opponent_grid[rowVal][colVal] = MISS_LETTER;
+        cout << name << pos << "miss";
     }
 }
 

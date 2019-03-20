@@ -4,8 +4,8 @@
  * Game.cpp
  * Project UID 4cd2d66df3154b6c8b0ff27aa6791edb
  *
- * <#Name#>
- * <#Uniqname#>
+ * Sameer Ali & Yaozong Huang
+ * samali & yaozongh
  *
  * Project 4: Battleship
  *
@@ -18,26 +18,42 @@
 
 
 Game::Game() {
-    // TODO: write implementation here.
+    p1 = Player();
+    p2 = Player();
 }
 
 Game::Game(Player player1, string grid1, Player player2, string grid2) {
-    // TODO: write implementation here.
+    p1 = player1;
+    p2 = player2;
+    if (grid1 == "" || grid1.fail()) {
+        generate_random_grid(p1);
+        cout << "Generating random grid for " << p1.get_name();
+    }
+    else {
+        p1.load_grid_file(grid1);
+    }
+    if (grid2 == "" || grid2.fail()) {
+        generate_random_grid(p2);
+        cout << "Generating random grid for " << p2.get_name();
+    }
+    else {
+        p2.load_grid_file(grid1);
+    }
 }
 
 Player Game::get_p1() {
-    // TODO: write implementation here.
-    return Player();
+    return p1;
 }
 
 Player Game::get_p2() {
-    // TODO: write implementation here.
-    return Player();
+    return p2;
 }
 
 string Game::get_move(string player_name) {
-    // TODO: write implementation here.
-    return "";
+    string move;
+    cout << player_name << " enter your move:";
+    cin >> move;
+    return move;
 }
 
 bool Game::check_valid_move(string move) {
