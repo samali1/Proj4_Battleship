@@ -25,7 +25,6 @@ Ship::Ship() {
 }
 
 Ship::Ship(Position start_in, Position end_in) {
-    Position::
 }
 
 Position Ship::get_start() {
