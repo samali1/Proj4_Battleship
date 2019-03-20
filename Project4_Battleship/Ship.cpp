@@ -18,8 +18,8 @@
 
 
 Ship::Ship() {
-    Position start;
-    Position end;
+    start = Position();
+    end = Position();
     num_hits = 0;
     size = 0;
 }
@@ -30,12 +30,17 @@ Ship::Ship(Position start_in, Position end_in) {
     int endRow = end_in.get_row();
     int endCol = end_in.get_col();
     
-    start.set_row(startRow);
-    start.set_col(startCol);
-    end.set_row(endRow);
-    end.set_col(endCol);
+    start = Position(startRow, startCol);
+    end = Position(endRow, endCol);
     
-    if (
+    if (is_horizontal()) {
+        if (startRow < endRow) {
+            size = endRow - startRow;
+        }
+        else if (endRow < startRow) {
+            size = startRow - endRow;
+        }
+    }
     
     num_hits = 0;
     
