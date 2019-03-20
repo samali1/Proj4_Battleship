@@ -21,22 +21,31 @@ Player::Player() {
     name = "";
     num_ships = 0;
     remaining_ships = 0;
-    
-    // TODO: INIT GRID FUNCTION
+    init_grid();
 }
 
 Player::Player(string name_val) {
-    // TODO: write implementation here.
+    name = name_val;
+    num_ships = 0;
+    remaining_ships = 0;
+    init_grid();
 }
 
 void Player::init_grid() {
-    // TODO: write implementation here.
-    return;
+    for (int i = 0; i < MAX_GRID_SIZE; i++) {
+        for (int j = 0; j < MAX_GRID_SIZE; j++) {
+            grid[i][j] = EMPTY_LETTER;
+        }
+    }
+    for (int i = 0; i < MAX_GRID_SIZE; i++) {
+        for (int j = 0; j < MAX_GRID_SIZE; j++) {
+            opponent_grid[i][j] = EMPTY_LETTER;
+        }
+    }
 }
 
 string Player::get_name() {
-    // TODO: write implementation here.
-    return "";
+    return name;
 }
 
 int Player::get_num_ships() {
