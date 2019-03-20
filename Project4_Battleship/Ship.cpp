@@ -29,13 +29,11 @@ Ship::Ship(Position start_in, Position end_in) {
 }
 
 Position Ship::get_start() {
-    // TODO: write implementation here.
-    return Position();
+    return start;
 }
 
 Position Ship::get_end() {
-    // TODO: write implementation here.
-    return Position();
+    return end;
 }
 
 int Ship::get_size() {
@@ -44,7 +42,10 @@ int Ship::get_size() {
 }
 
 bool Ship::is_horizontal() {
-    // TODO: write implementation here.
+    int row;
+    
+    if (start[0] == 
+    
     return false;
 }
 
@@ -54,11 +55,17 @@ bool Ship::has_position(Position pos) {
 }
 
 void Ship::hit() {
-    // TODO: write implementation here.
+    if (num_hits < size) {
+        num_hits++;
+    }
     return;
 }
 
 bool Ship::has_sunk() {
-    // TODO: write implementation here.
+    if (num_hits == size) {
+        return true;
+    }
+    else {
     return false;
+    }
 }
