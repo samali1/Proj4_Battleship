@@ -41,7 +41,10 @@ void test_position() {
 }
 
 void test_ship() {
-    // Write your tests here
+    Ship testCase;
+    
+    testCase.Ship();
+    
     return;
 }
 
