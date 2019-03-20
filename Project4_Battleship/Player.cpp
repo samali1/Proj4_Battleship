@@ -49,28 +49,26 @@ string Player::get_name() {
 }
 
 int Player::get_num_ships() {
-    // TODO: write implementation here.
-    return -1;
+    return num_ships;
 }
 
 int Player::get_remaining_ships() {
-    // TODO: write implementation here.
-    return -1;
+    return remaining_ships;
 }
 
 char Player::get_grid_at(int row, int col) {
-    // TODO: write implementation here.
-    return '?';
+    return grid[row][col];
 }
 
 char Player::get_opponent_grid_at(int row, int col) {
-    // TODO: write implementation here.
-    return '?';
+    return opponent_grid[row][col];
 }
 
 void Player::add_ship(Ship ship) {
-    // TODO: write implementation here.
-    return;
+    ship.get_start();
+    ship.get_end();
+    
+    
 }
 
 bool Player::position_not_hit(Position pos) {
