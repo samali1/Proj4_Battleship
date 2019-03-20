@@ -126,8 +126,11 @@ void Player::announce_ship_sunk(int size) {
 }
 
 bool Player::load_grid_file(string filename) {
-    // TODO: write implementation here.
-    return false;
+    ofstream myfile;
+    myfile.open (filename);
+    myfile << add_ship();
+    myfile.close();
+    }
 }
 
 bool Player::destroyed() {

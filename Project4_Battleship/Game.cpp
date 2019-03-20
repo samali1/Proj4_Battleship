@@ -72,7 +72,11 @@ bool Game::check_valid_move(string move) {
 }
 
 void Game::start(char difficulty, int max_rounds) {
-    // TODO: write implementation here.
+    if (max_rounds <= MAX_ROUNDS) {
+        for (int i = 0; i < max_rounds; i++) {
+            
+        }
+    }
 }
 
 // Your code goes above this line.
