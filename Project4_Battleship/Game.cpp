@@ -72,9 +72,29 @@ bool Game::check_valid_move(string move) {
 }
 
 void Game::start(char difficulty, int max_rounds) {
+    int roundCounter = 0;
     if (max_rounds <= MAX_ROUNDS) {
         for (int i = 0; i < max_rounds; i++) {
+            roundCounter += 1;
             
+            
+            if (p1.destroyed()) {
+                cout << "Game over, winner is ";
+                p1.get_name();
+                cout << " in " << roundCounter << "rounds";
+                
+            }
+            else if (p2.destroyed()){
+                cout << "Game over, winner is ";
+                p2.get_name();
+                cout << " in " << roundCounter << "rounds";
+            }
+            cout << "Your grid" << endl;
+            p1.print_grid();
+            cout << endl;
+            p2.get_name();
+            cout << "'s grid" << endl;
+            p2.print_opponent_grid();
         }
     }
 }
