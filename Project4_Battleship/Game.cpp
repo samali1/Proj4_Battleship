@@ -25,14 +25,14 @@ Game::Game() {
 Game::Game(Player player1, string grid1, Player player2, string grid2) {
     p1 = player1;
     p2 = player2;
-    if (grid1 == "" || grid1.fail()) {
+    if (grid1 == "" || p1.load_grid_file(grid1)) {
         generate_random_grid(p1);
         cout << "Generating random grid for " << p1.get_name();
     }
     else {
         p1.load_grid_file(grid1);
     }
-    if (grid2 == "" || grid2.fail()) {
+    if (grid2 == "" || p2.load_grid_file(grid2)) {
         generate_random_grid(p2);
         cout << "Generating random grid for " << p2.get_name();
     }
@@ -59,14 +59,14 @@ string Game::get_move(string player_name) {
 bool Game::check_valid_move(string move) {
     int moveRow = move[0];
     int moveCol = toupper(move[1]) - 65;
-    int lengthMove = move.length();
+    int lengthMove = move.size();
     if (lengthMove != 2) {
-        return false;
         cout << "Error 1: " << p1.get_name() << " you entered an invalid input";
+        return false;
     }
     else if (moveRow <= MAX_GRID_SIZE || moveCol <= MAX_GRID_SIZE) {
-        return false;
         cout << "Error 2: " << p1.get_name() << " you entered an invalid position";
+        return false;
     }
     return true;
 }
@@ -79,10 +79,13 @@ void Game::start(char difficulty, int max_rounds) {
         for (int i = 0; i < max_rounds; i++) {
             roundCounter += 1;
             string p1move = get_move(p1name);
-            string p2move = get_move(p2name);
             check_valid_move(p1move);
-            check_valid_move(p2move);
-            p1.attack(p2, p1move);
+            int p1row = p1move[0];
+            char p1Col = p1move[1] + 65;
+            Position p1MovePos;
+            p1MovePos.set_row(p1row);
+            p1MovePos.set_col(p1Col);
+            p1.attack(p2, p1MovePos);
             opponent_make_move(difficulty);
             if (p1.destroyed()) {
                 cout << "Game over, winner is " << p1name << " in " << roundCounter << "rounds";

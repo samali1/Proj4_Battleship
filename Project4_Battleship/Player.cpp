@@ -65,26 +65,28 @@ char Player::get_opponent_grid_at(int row, int col) {
 }
 
 void Player::add_ship(Ship ship) {
-    ship.get_start();
-    ship.get_end();
-    int shipSize = ship.get_size();
+    Position shipStart = ship.get_start();
+    Position shipEnd = ship.get_end();
+    int startRow = shipStart.get_row();
+    int startCol = shipStart.get_col();
+    int endRow = shipEnd.get_row();
+    int endCol = shipEnd.get_col();
     while (num_ships < MAX_NUM_SHIPS) {
         if (ship.is_horizontal()) {
-            for (int i = ; i < shipSize + ; i++) {
-                grid[rowVal][i] = SHIP_LETTER;
+            for (int i = startCol; i <= endCol; i++) {
+                grid[startRow][i] = SHIP_LETTER;
                 num_ships += 1;
                 remaining_ships -= 1;
             }
         }
         else {
-            for (int j = ; i < shipSize + ; j++) {
-                grid[j][colVal] = SHIP_LETTER;
+            for (int j = startRow; j <= endRow; j++) {
+                grid[j][endCol] = SHIP_LETTER;
                 num_ships += 1;
                 remaining_ships -= 1;
             }
         }
     }
-    return;
 }
 
 bool Player::position_not_hit(Position pos) {
@@ -98,24 +100,26 @@ bool Player::position_not_hit(Position pos) {
 }
 
 void Player::attack(Player &opponent, Position pos) {
-    int rowVal = pos.get_row();
-    int colVal = pos.get_col();
-    int shipSize = opponent.ships[MAX_NUM_SHIPS].get_size();
-    if (opponent.position_not_hit(pos) && (opponent.ships[MAX_NUM_SHIPS].has_position(pos))) {
-        opponent.ships[MAX_NUM_SHIPS].hit();
-        opponent.grid[rowVal][colVal] = HIT_LETTER;
-        opponent_grid[rowVal][colVal] = HIT_LETTER;
-        cout << name << pos << "hit";
-        if (opponent.ships[MAX_NUM_SHIPS].has_sunk()) {
+    for (int i = 0; i < MAX_NUM_SHIPS; i++) {
+        int rowVal = pos.get_row();
+        int colVal = pos.get_col();
+        int shipSize = opponent.ships[i].get_size();
+        if (opponent.position_not_hit(pos) && (opponent.ships[i].has_position(pos))) {
+            opponent.ships[i].hit();
+            opponent.grid[rowVal][colVal] = HIT_LETTER;
+            opponent_grid[rowVal][colVal] = HIT_LETTER;
+            cout << name << pos << "hit";
+            if (opponent.ships[i].has_sunk()) {
             opponent.remaining_ships -= 1;
-            announce_ship_sunk(shipSize);
-        }
+                announce_ship_sunk(shipSize);
+            }
         
-    }
-    else {
-        opponent.grid[rowVal][colVal] = MISS_LETTER;
-        opponent_grid[rowVal][colVal] = MISS_LETTER;
-        cout << name << pos << "miss";
+        }
+        else {
+            opponent.grid[rowVal][colVal] = MISS_LETTER;
+            opponent_grid[rowVal][colVal] = MISS_LETTER;
+            cout << name << pos << "miss";
+        }
     }
 }
 
@@ -126,11 +130,13 @@ void Player::announce_ship_sunk(int size) {
 }
 
 bool Player::load_grid_file(string filename) {
-    ofstream myfile;
-    myfile.open (filename);
-    myfile << add_ship();
-    myfile.close();
+    for (int i = 0; i < MAX_NUM_SHIPS; i++){
+        ofstream myfile;
+        myfile.open (filename);
+        //myfile << add_ship(ships[i]);
+        myfile.close();
     }
+    return true;
 }
 
 bool Player::destroyed() {
