@@ -5,6 +5,210 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>1A62105E-4A8D-40DC-A025-DF0877D79DB0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1A62105E-4A8D-40DC-A025-DF0877D79DB0.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574752530.45914304</real>
+			<key>timeStoppedRecording</key>
+			<real>574752531.26485503</real>
+			<key>title</key>
+			<string>Build Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>1A62105E-4A8D-40DC-A025-DF0877D79DB0</string>
+		</dict>
+		<key>2A40799C-E09B-49EA-8B57-912BAE7BD93A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2A40799C-E09B-49EA-8B57-912BAE7BD93A.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574752619.36623704</real>
+			<key>timeStoppedRecording</key>
+			<real>574752619.441715</real>
+			<key>title</key>
+			<string>Build Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>2A40799C-E09B-49EA-8B57-912BAE7BD93A</string>
+		</dict>
+		<key>3FEB7BBA-9FEE-4BEB-9144-A4B65A78B19A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>3FEB7BBA-9FEE-4BEB-9144-A4B65A78B19A.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574752564.11601198</real>
+			<key>timeStoppedRecording</key>
+			<real>574752564.19137502</real>
+			<key>title</key>
+			<string>Build Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>3FEB7BBA-9FEE-4BEB-9144-A4B65A78B19A</string>
+		</dict>
+		<key>BF4C7B7D-662D-43C1-945F-B0C393465DBE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BF4C7B7D-662D-43C1-945F-B0C393465DBE.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574752614.36974895</real>
+			<key>timeStoppedRecording</key>
+			<real>574752614.84286296</real>
+			<key>title</key>
+			<string>Build Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>BF4C7B7D-662D-43C1-945F-B0C393465DBE</string>
+		</dict>
+		<key>C9D123CC-D4BE-4F6E-9396-BD9CBD767A3D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C9D123CC-D4BE-4F6E-9396-BD9CBD767A3D.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574752630.28064096</real>
+			<key>timeStoppedRecording</key>
+			<real>574752630.35652399</real>
+			<key>title</key>
+			<string>Build Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>C9D123CC-D4BE-4F6E-9396-BD9CBD767A3D</string>
+		</dict>
+		<key>D284DBA0-CDC3-475F-8257-A8152B88900B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D284DBA0-CDC3-475F-8257-A8152B88900B.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574752518.79035294</real>
+			<key>timeStoppedRecording</key>
+			<real>574752519.700001</real>
+			<key>title</key>
+			<string>Build Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>D284DBA0-CDC3-475F-8257-A8152B88900B</string>
+		</dict>
+		<key>F65E37D4-1CBB-40DD-B1BD-E41FAE1DC286</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F65E37D4-1CBB-40DD-B1BD-E41FAE1DC286.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574752538.53771698</real>
+			<key>timeStoppedRecording</key>
+			<real>574752539.90956295</real>
+			<key>title</key>
+			<string>Build Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>F65E37D4-1CBB-40DD-B1BD-E41FAE1DC286</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -67,10 +67,24 @@ char Player::get_opponent_grid_at(int row, int col) {
 void Player::add_ship(Ship ship) {
     ship.get_start();
     ship.get_end();
+    int shipSize = ship.get_size();
     while (num_ships < MAX_NUM_SHIPS) {
-    
+        if (ship.is_horizontal()) {
+            for (int i = ; i < shipSize + ; i++) {
+                grid[rowVal][i] = SHIP_LETTER;
+                num_ships += 1;
+                remaining_ships -= 1;
+            }
+        }
+        else {
+            for (int j = ; i < shipSize + ; j++) {
+                grid[j][colVal] = SHIP_LETTER;
+                num_ships += 1;
+                remaining_ships -= 1;
+            }
+        }
     }
-    
+    return;
 }
 
 bool Player::position_not_hit(Position pos) {
@@ -84,13 +98,18 @@ bool Player::position_not_hit(Position pos) {
 }
 
 void Player::attack(Player &opponent, Position pos) {
-    // TODO: write implementation here.
-    return;
+    int rowVal = pos.get_row();
+    int colVal = pos.get_col();
+    char boardValue = grid[rowVal][colVal];
+    if (!(boardValue == HIT_LETTER) && (boardValue == SHIP_LETTER)) {
+        
+    }
 }
 
 void Player::announce_ship_sunk(int size) {
-    // TODO: write implementation here.
-    return;
+    if ((size >= 2) && (size <= 5)) {
+        cout << "Congratulations " << name << "! You sunk a Destroyer";
+    }
 }
 
 bool Player::load_grid_file(string filename) {
