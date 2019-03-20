@@ -67,12 +67,19 @@ char Player::get_opponent_grid_at(int row, int col) {
 void Player::add_ship(Ship ship) {
     ship.get_start();
     ship.get_end();
+    while (num_ships < MAX_NUM_SHIPS) {
     
+    }
     
 }
 
 bool Player::position_not_hit(Position pos) {
-    // TODO: write implementation here.
+    int rowVal = pos.get_row();
+    int colVal = pos.get_col();
+    char boardValue = grid[rowVal][colVal];
+    if (boardValue == EMPTY_LETTER || boardValue == SHIP_LETTER) {
+        return true;
+    }
     return false;
 }
 
@@ -92,7 +99,9 @@ bool Player::load_grid_file(string filename) {
 }
 
 bool Player::destroyed() {
-    // TODO: write implementation here.
+    if (remaining_ships == 0) {
+        return true;
+    }
     return false;
 }
 
