@@ -34,11 +34,19 @@ Ship::Ship(Position start_in, Position end_in) {
     end = Position(endRow, endCol);
     
     if (is_horizontal()) {
-        if (startRow < endRow) {
-            size = endRow - startRow;
+        if (startCol <= endCol) {
+            size = endCol - startCol + 1;
+        }
+        else if (endCol < startCol) {
+            size = startCol - endCol + 1;
+        }
+    }
+    else {
+        if (startRow <= endRow) {
+            size = endRow - startRow + 1;
         }
         else if (endRow < startRow) {
-            size = startRow - endRow;
+            size = startRow - endRow +1;
         }
     }
     
@@ -70,13 +78,21 @@ bool Ship::is_horizontal() {
 bool Ship::has_position(Position pos) {
     int posRow = pos.get_row();
     int posCol = pos.get_col();
-    if (((posRow >= startRow) && (posRow <= endRow)) && ((posCol >= starCol) && (posCol <= endCol))) {
+    
+    int startRow = start.get_row();
+    int startCol = start.get_col();
+    int endRow = end.get_row();
+    int endCol = end.get_col();
+    
+    if (((posRow >= startRow) && (posRow <= endRow)) && ((posCol >= startCol) && (posCol <= endCol))) {
         return true;
     }
-    else if (((posRow >= startRow) && (posRow <= endRow)) && ((posCol >= starCol) && (posCol <= endCol))) {
+    else if (((posRow >= endRow) && (posRow <= startRow)) && ((posCol >= endCol) && (posCol <= startCol))) {
+        return true;
     }
-    
-    return false;
+    else{
+        return false;
+    }
 }
 
 void Ship::hit() {

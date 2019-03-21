@@ -63,5 +63,8 @@ int main() {
     (Note: you will only play one instance of the game, i.e., after the game ends, 
        the program ends.)
 */
+    print_initial_header();
+    cout << endl;
+    
     return 0;
 }
