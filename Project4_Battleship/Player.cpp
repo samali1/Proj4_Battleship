@@ -71,20 +71,20 @@ void Player::add_ship(Ship ship) {
     int startCol = shipStart.get_col();
     int endRow = shipEnd.get_row();
     int endCol = shipEnd.get_col();
-    while (num_ships < MAX_NUM_SHIPS) {
+    if (!(num_ships == MAX_NUM_SHIPS)) {
         if (ship.is_horizontal()) {
             for (int i = startCol; i <= endCol; i++) {
                 grid[startRow][i] = SHIP_LETTER;
-                num_ships += 1;
-                remaining_ships -= 1;
             }
+            num_ships++;
+            remaining_ships++;
         }
         else {
-            for (int j = startRow; j <= endRow; j++) {
+            for (int j = endRow; j <= startRow; j++) {
                 grid[j][endCol] = SHIP_LETTER;
-                num_ships += 1;
-                remaining_ships -= 1;
             }
+            num_ships++;
+            remaining_ships++;
         }
     }
 }
@@ -108,24 +108,32 @@ void Player::attack(Player &opponent, Position pos) {
             opponent.ships[i].hit();
             opponent.grid[rowVal][colVal] = HIT_LETTER;
             opponent_grid[rowVal][colVal] = HIT_LETTER;
-            cout << name << pos << "hit";
+            cout << name << " " << pos << " hit" << endl;
             if (opponent.ships[i].has_sunk()) {
-            opponent.remaining_ships -= 1;
+                opponent.remaining_ships--;
                 announce_ship_sunk(shipSize);
             }
-        
         }
         else {
             opponent.grid[rowVal][colVal] = MISS_LETTER;
             opponent_grid[rowVal][colVal] = MISS_LETTER;
-            cout << name << pos << "miss";
+            cout << name << " " << pos << " miss" << endl;
         }
     }
 }
 
 void Player::announce_ship_sunk(int size) {
-    if ((size >= 2) && (size <= 5)) {
-        cout << "Congratulations " << name << "! You sunk a Destroyer";
+    if (size == 2) {
+        cout << "Congratulations " << name << "!" << " You sunk a Destroyer!" << endl;
+    }
+    else if (size == 3) {
+        cout << "Congratulations " << name << "!" << " You sunk a Submarine!" << endl;
+    }
+    else if (size == 4) {
+        cout << "Congratulations " << name << "!" << " You sunk a Battleship!" << endl;
+    }
+    else if (size == 5) {
+        cout << "Congratulations " << name << "!" << " You sunk a Carrier!" << endl;
     }
 }
 
@@ -143,7 +151,9 @@ bool Player::destroyed() {
     if (remaining_ships == 0) {
         return true;
     }
-    return false;
+    else {
+        return false;
+    }
 }
 
 // Your code goes above this line.

@@ -29,9 +29,9 @@ void test_player();
 void test_game();
 
 int main() {
-    test_position();
-    test_ship();
-    // test_player();
+//    test_position();
+//    test_ship();
+    test_player();
     return 0;
 }
 
@@ -169,7 +169,7 @@ void test_ship() {
     cout << defaultCon.get_start() << " ";
     cout << defaultCon.get_end() << " ";
     cout << defaultCon.get_size() << endl;
-    cout << "DefShip has no size, expect 1, actual :" <<  defaultCon.has_sunk() << endl;
+    cout << "DefShip has no size, expect 1, actual: " <<  defaultCon.has_sunk() << endl;
     
     cout << endl;
     
@@ -249,11 +249,97 @@ void test_ship() {
         endBeforeStart1.hit();
     }
     cout << "eBs2Ship has still not sunk, expect 0, actual: " << endBeforeStart1.has_sunk() << endl;
+    
+    cout << endl;
     return;
 }
 
 void test_player() {
-    // Write your tests here
-    return;
+    
+    // testing Default Constructor
+    Player p1;
+    p1.init_grid();
+    cout << "Expected: \"\", actual: " << p1.get_name() << endl;
+    
+    cout << endl;
+    
+    // testing Non-default Constructor
+    Player p2("Sameer");
+    p2.init_grid();
+    cout << "Expected: \"Sameer\", actual: " << p2.get_name() << endl;
+    
+    cout << endl;
+    
+    // testing add_ship
+    Position start('1','A');
+    Position end('1','C');
+    Ship ship(start, end);
+    
+    Position start1('3','B');
+    Position end1('5','b');
+    Ship ship1(start1, end1);
+    
+    p2.add_ship(ship);
+    cout << "Grid with one ship" << endl;
+    p2.print_grid();
+    cout << "Num of ships: " << p2.get_num_ships() << " "
+         << "and remaining ships: " << p2.get_remaining_ships() << endl;
+    p2.add_ship(ship1);
+    cout << "Grid with two ships" << endl;
+    p2.print_grid();
+    cout << "Num of ships: " << p2.get_num_ships() << " "
+         << "and remaining ships: " << p2.get_remaining_ships() << endl;
+    
+    cout << endl;
+    cout << endl;
+    
+    // testing attacking
+    
+    Player test;
+    test.init_grid();
+    
+    Position start2('1','A');
+    Position end2('1','C');
+    Ship ship2(start2, end2);
+    
+    Position start3('4','B');
+    Position end3('3','b');
+    Ship ship3(start3, end3);
+    
+    Position start4(6,1);
+    Position end4(6,5);
+    Ship ship4(start4, end4);
+    
+    test.add_ship(ship2);
+    test.add_ship(ship3);
+    test.add_ship(ship4);
+    test.print_grid();
+    
+    cout << endl;
+    
+    // testing position_not_hit
+    Position onShip('1','A');
+    Position onShip1(6,3);
+    Position empty(1,4);
+    Position empty2(7,7);
+    
+    cout << "Expected: 1, actual: " << test.position_not_hit(onShip) << endl;
+    cout << "Expected: 1, actual: " << test.position_not_hit(onShip1) << endl;
+    cout << "Expected: 1, actual: " << test.position_not_hit(empty) << endl;
+    cout << "Expected: 1, actual: " << test.position_not_hit(empty2) << endl;
+    
+    cout << endl;
+    
+    // testing attack
+    p2.attack(test, empty);
+    test.print_grid();
+    cout << endl;
+    p2.attack(test, onShip1);
+    test.print_grid();
+    
+    // testing Destroyed
+    
+    
+    
 }
 
