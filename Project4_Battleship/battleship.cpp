@@ -65,6 +65,6 @@ int main() {
 */
     print_initial_header();
     cout << endl;
-    
+    cout << "Enter your name: ";
     return 0;
 }
