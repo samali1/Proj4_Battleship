@@ -122,6 +122,27 @@ void test_position() {
     cout << endl;
     
     // testing reading and writing positions
+    Position pos12;
+    Position pos13;
+    cout << "Getting position from reading grid2.txt" << endl;
+    
+    // reading
+    ifstream reading;
+    reading.open("grid2.txt");
+    pos12.read(reading);
+    cout << "Expected (2,5), actual: ";
+    cout << pos12.get_row() << " " << pos12.get_col() << endl;
+    pos13.read(reading);
+    cout << "Expected (2,6), actual: ";
+    cout << pos13.get_row() << " " << pos13.get_col();
+    reading.close();
+    
+    // writing
+    ofstream writing;
+    writing.open("grid3.txt");
+    pos12.write(writing);
+    
+    cout << endl;
     
     
     return;
@@ -132,6 +153,8 @@ void test_ship() {
     
     Position start('1','A');
     Position end('1','C');
+    Position pos('1','b');
+    Position pos1('2','A');
     Ship nonDefault(start, end);
     
     // testing Constructors
@@ -145,7 +168,11 @@ void test_ship() {
     
     cout << nonDefault.get_start() << " ";
     cout << nonDefault.get_end() << " ";
-    cout << nonDefault.get_size();
+    cout << nonDefault.get_size() << endl;
+    cout << "Position (1,B) is in the range, expect: 1, actual: "
+         << nonDefault.has_position(pos) << endl;
+    cout << "Position (2,A) is not in the range, expect: 0, actual: "
+    << nonDefault.has_position(pos1) << endl;
     
     cout << endl;
     
@@ -153,6 +180,10 @@ void test_ship() {
     
     cout << "NonShip is not sunk, expect 0, actual: " << nonDefault.has_sunk() << endl;
     int size = nonDefault.get_size();
+    for (int i = 0; i < size-1; i++) {
+        nonDefault.hit();
+    }
+    cout << "NonShip is not sunk, expect 0, actual: " << nonDefault.has_sunk() << endl;
     for (int i = 0; i < size; i++) {
         nonDefault.hit();
     }

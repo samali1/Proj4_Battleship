@@ -55,8 +55,8 @@ void Position::set_col(int col_in) {
 }
 
 void Position::read(istream &is) {
-    int rowVal;
-    char colChar;
+    int rowVal = 0;
+    char colChar = 'A';
     is >> rowVal;
     if (!is.fail()) {
         is >> colChar;
