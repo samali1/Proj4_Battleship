@@ -124,6 +124,7 @@ void test_position() {
     // testing reading and writing positions
     Position pos12;
     Position pos13;
+    Position pos14;
     cout << "Getting position from reading grid2.txt" << endl;
     
     // reading
@@ -135,6 +136,12 @@ void test_position() {
     pos13.read(reading);
     cout << "Expected (2,6), actual: ";
     cout << pos13.get_row() << " " << pos13.get_col();
+    reading.close();
+    reading.open("grid1.txt");
+    cout << endl;
+    pos14.read(reading);
+    cout << "Expected (7,1), actual: ";
+    cout << pos14.get_row() << " " << pos14.get_col() << endl;
     reading.close();
     
     // writing
