@@ -30,13 +30,100 @@ void test_game();
 
 int main() {
     test_position();
-    test_ship();
-    test_player();
+    // test_ship();
+    // test_player();
     return 0;
 }
 
 void test_position() {
-    // Write your tests here
+    // testing Default Constructor
+    Position pos;
+    
+    cout << "Getting position" << endl;
+    cout << pos.get_row() << " ";
+    cout << pos.get_col() << " ";
+    cout << endl;
+    
+    cout << endl;
+    
+    // testing Non-default Constructors
+    
+    // Constructor 1
+    Position pos1(0,0);
+    Position pos2(1,3);
+    Position pos3(8,8);
+    Position pos4(0,8);
+    
+    cout << "Getting positions" << endl;
+    cout << pos1.get_row() << " ";
+    cout << pos1.get_col() << " ";
+    cout << endl;
+    cout << pos2.get_row() << " ";
+    cout << pos2.get_col() << " ";
+    cout << endl;
+    cout << pos3.get_row() << " ";
+    cout << pos3.get_col() << " ";
+    cout << endl;
+    cout << pos4.get_row() << " ";
+    cout << pos4.get_col() << " ";
+    cout << endl;
+    
+    cout << endl;
+    
+    // Constructor 2
+    Position pos5('1','A');
+    Position pos6('1','a');
+    Position pos7('3','C');
+    Position pos8('4','h');
+    
+    cout << "Getting positions" << endl;
+    cout << pos5.get_row() << " ";
+    cout << pos5.get_col() << " ";
+    cout << endl;
+    cout << pos6.get_row() << " ";
+    cout << pos6.get_col() << " ";
+    cout << endl;
+    cout << pos7.get_row() << " ";
+    cout << pos7.get_col() << " ";
+    cout << endl;
+    cout << pos8.get_row() << " ";
+    cout << pos8.get_col() << " ";
+    cout << endl;
+    
+    cout << endl;
+    
+    // testing Setters
+    int row = 0, col = 0;
+    int row1 = 2, col1 = 0;
+    int row2 = 1, col2 = 4;
+    
+    Position pos9;
+    Position pos10;
+    Position pos11;
+    
+    pos9.set_row(row);
+    pos9.set_col(col);
+    pos10.set_row(row1);
+    pos10.set_col(col1);
+    pos11.set_row(row2);
+    pos11.set_col(col2);
+    
+    cout << "Getting position based on setters" << endl;
+    cout << pos9.get_row() << " ";
+    cout << pos9.get_col() << " ";
+    cout << endl;
+    cout << pos10.get_row() << " ";
+    cout << pos10.get_col() << " ";
+    cout << endl;
+    cout << pos11.get_row() << " ";
+    cout << pos11.get_col() << " ";
+    cout << endl;
+    
+    cout << endl;
+    
+    // testing reading and writing positions
+    
+    
     return;
 }
 

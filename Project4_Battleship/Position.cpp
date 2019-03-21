@@ -33,7 +33,7 @@ Position::Position(char row_in, char col_in) {
     row = check_range(rowVal);
     
     int colVal = 0;
-    colVal = (int) col_in;
+    colVal = (int) toupper(col_in);
     colVal = colVal - 65;
     col = check_range(colVal);
 }
