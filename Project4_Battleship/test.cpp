@@ -30,7 +30,7 @@ void test_game();
 
 int main() {
     test_position();
-    // test_ship();
+    test_ship();
     // test_player();
     return 0;
 }
