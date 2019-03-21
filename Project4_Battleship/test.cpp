@@ -270,7 +270,7 @@ void test_player() {
     
     cout << endl;
     
-    // testing add_ship
+    // testing add_ship and counters
     Position start('1','A');
     Position end('1','C');
     Ship ship(start, end);
@@ -293,7 +293,7 @@ void test_player() {
     cout << endl;
     cout << endl;
     
-    // testing attacking
+    // testing adding more ships
     
     Player test;
     test.init_grid();
@@ -310,9 +310,30 @@ void test_player() {
     Position end4(6,5);
     Ship ship4(start4, end4);
     
+    Position start5('1','H');
+    Position end5('3','H');
+    Ship ship5(start5, end5);
+    
+    Position start6('5','F');
+    Position end6('5','C');
+    Ship ship6(start6, end6);
+    
+    Position start7('4','A');
+    Position end7('5','A');
+    Ship ship7(start7, end7);
+    
     test.add_ship(ship2);
     test.add_ship(ship3);
     test.add_ship(ship4);
+    test.add_ship(ship5);
+    cout << "Num of ships: " << test.get_num_ships()
+         << " and remaining ships: " << test.get_remaining_ships() << endl;
+    test.add_ship(ship6);
+    cout << "Num of ships: " << test.get_num_ships()
+         << " and remaining ships: " << test.get_remaining_ships() << endl;
+    test.print_grid();
+    cout << "Trying to add a 6th ship" << endl;
+    test.add_ship(ship7);
     test.print_grid();
     
     cout << endl;
@@ -338,7 +359,6 @@ void test_player() {
     test.print_grid();
     
     // testing Destroyed
-    
     
     
 }

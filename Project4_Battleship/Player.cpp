@@ -71,17 +71,32 @@ void Player::add_ship(Ship ship) {
     int startCol = shipStart.get_col();
     int endRow = shipEnd.get_row();
     int endCol = shipEnd.get_col();
+    
     if (!(num_ships == MAX_NUM_SHIPS)) {
         if (ship.is_horizontal()) {
-            for (int i = startCol; i <= endCol; i++) {
-                grid[startRow][i] = SHIP_LETTER;
+            if (endCol < startCol) {
+                for (int i = endCol; i <= startCol; i++) {
+                    grid[startRow][i] = SHIP_LETTER;
+                }
+            }
+            else if (startCol < endCol) {
+                for (int i = startCol; i <= endCol; i++) {
+                    grid[startRow][i] = SHIP_LETTER;
+                }
             }
             num_ships++;
             remaining_ships++;
         }
         else {
-            for (int j = endRow; j <= startRow; j++) {
+            if (endRow < startRow) {
+                for (int j = endRow; j <= startRow; j++) {
+                    grid[j][endCol] = SHIP_LETTER;
+                }
+            }
+            else if (startRow < endRow) {
+                for (int j = startRow; j <= endRow; j++) {
                 grid[j][endCol] = SHIP_LETTER;
+                }
             }
             num_ships++;
             remaining_ships++;
