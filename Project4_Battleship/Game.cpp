@@ -57,7 +57,7 @@ string Game::get_move(string player_name) {
 }
 
 bool Game::check_valid_move(string move) {
-    int moveRow = move[0]-1;
+    char moveRow = move[0]-48;
     // 65 is Ascii for "A"
     char moveCol = toupper(move[1]);
     if (!(move.length() == 2)) {
