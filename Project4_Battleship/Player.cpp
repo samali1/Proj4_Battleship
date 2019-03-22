@@ -121,24 +121,20 @@ void Player::attack(Player &opponent, Position pos) {
         int rowVal = pos.get_row();
         int colVal = pos.get_col();
         int shipSize = opponent.ships[i].get_size();
-        
-        if (opponent.ships[i].has_position(pos)) {
-            if (opponent.position_not_hit(pos) && (opponent.ships[i].has_position(pos))) {
-                opponent.ships[i].hit();
-                opponent.grid[rowVal][colVal] = HIT_LETTER;
-                opponent_grid[rowVal][colVal] = HIT_LETTER;
-                cout << name << " " << pos << " hit" << endl;
-                if (opponent.ships[i].has_sunk()) {
-                    opponent.remaining_ships--;
-                    announce_ship_sunk(shipSize);
-                }
+        if (opponent.position_not_hit(pos) && (opponent.ships[i].has_position(pos))) {
+            opponent.ships[i].hit();
+            opponent.grid[rowVal][colVal] = HIT_LETTER;
+            opponent_grid[rowVal][colVal] = HIT_LETTER;
+            cout << name << " " << pos << " hit" << endl;
+            if (opponent.ships[i].has_sunk()) {
+                opponent.remaining_ships -= 1;
+                announce_ship_sunk(shipSize);
             }
         }
-        else if (!opponent.ships[i].has_position(pos)) {
-            if (position_not_hit(pos))
-                opponent.grid[rowVal][colVal] = MISS_LETTER;
+        else {
+            opponent.grid[rowVal][colVal] = MISS_LETTER;
             opponent_grid[rowVal][colVal] = MISS_LETTER;
-            cout << name << " " << pos << " miss" << endl;
+            cout << name << " " << pos << " miss";
         }
     }
 }
