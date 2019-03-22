@@ -59,7 +59,8 @@ string Game::get_move(string player_name) {
 bool Game::check_valid_move(string move) {
     int moveRow = move[0]-1;
     // 65 is Ascii for "A"
-    int moveCol = toupper(move[1]) - 65;
+    int moveCol = (int) toupper(move[1]);
+    moveCol -= 65;
     if (!(move.length() == 2)) {
         cout << "Error 1: " << p1.get_name() << " you entered an invalid input";
         return false;
