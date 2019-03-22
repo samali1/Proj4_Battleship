@@ -376,3 +376,15 @@ void test_player() {
     p4.print_grid();
 }
 
+void test_game() {
+    // testing check_valid_move
+    string validMove = "1A";
+    string validMove1 = "2F";
+    string validMove2 = "8H";
+    string validMove3 = "8A";
+    string validmove4 = "1H";
+    
+    string invalidMove = "10A";
+    string invalidMove1 = "*B";
+    string invalidMove2 = "B10";
+}
