@@ -29,11 +29,13 @@ Position::Position(int row_in, int col_in) {
 Position::Position(char row_in, char col_in) {
     int rowVal = 0;
     rowVal = (int) row_in;
+    // 49 is the ASCII value for '1'
     rowVal = rowVal - 49;
     row = check_range(rowVal);
     
     int colVal = 0;
     colVal = (int) toupper(col_in);
+    // 65 is the ASCII value for 'A'
     colVal = colVal - 65;
     col = check_range(colVal);
 }
@@ -64,6 +66,7 @@ void Position::read(istream &is) {
         row = check_range(rowVal - 1);
         int colVal = 0;
         colVal = (int) colChar;
+        // 65 is the ASCII value for 'A'
         col = check_range(colVal - 65);
     }
     else {
