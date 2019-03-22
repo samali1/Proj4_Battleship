@@ -79,6 +79,7 @@ void Position::read(istream &is) {
         colChar = toupper(colChar);
         int colVal = 0;
         colVal = (int) colChar;
+        // 65 is the ASCII value for 'A'
         col = check_range(colVal - 65);
     }
 }
