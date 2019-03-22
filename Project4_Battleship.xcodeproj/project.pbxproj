@@ -11,8 +11,8 @@
 		826101752240A5BE00F8222B /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8261016B2240A5BD00F8222B /* Player.cpp */; };
 		826101772240A5BE00F8222B /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8261016F2240A5BD00F8222B /* Game.cpp */; };
 		8261017A2240A5BE00F8222B /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826101732240A5BE00F8222B /* Position.cpp */; };
+		827BCF8E2244BF05004C86EA /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826101722240A5BD00F8222B /* test.cpp */; };
 		C79350092244899F00B22508 /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826101702240A5BD00F8222B /* Ship.cpp */; };
-		C793500A2244B86200B22508 /* battleship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8261016C2240A5BD00F8222B /* battleship.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -150,11 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				826101752240A5BE00F8222B /* Player.cpp in Sources */,
-				C793500A2244B86200B22508 /* battleship.cpp in Sources */,
 				826101742240A5BE00F8222B /* utility.cpp in Sources */,
 				826101772240A5BE00F8222B /* Game.cpp in Sources */,
 				C79350092244899F00B22508 /* Ship.cpp in Sources */,
 				8261017A2240A5BE00F8222B /* Position.cpp in Sources */,
+				827BCF8E2244BF05004C86EA /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

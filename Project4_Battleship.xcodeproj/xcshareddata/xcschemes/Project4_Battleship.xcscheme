@@ -47,7 +47,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/frankhuang/Documents/Winter2019/EECS 183/Proj4_Battleship/Project4_Battleship"
+      customWorkingDirectory = "/Users/samali/Desktop/Sem2/EECS183/Projects/Project4_Battleship/Project4_Battleship"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"

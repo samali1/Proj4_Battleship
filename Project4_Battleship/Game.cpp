@@ -57,15 +57,15 @@ string Game::get_move(string player_name) {
 }
 
 bool Game::check_valid_move(string move) {
-    char moveRow = move[0]-48;
+    int moveRow = move[0] - '0';
     // 65 is Ascii for "A"
     char moveCol = toupper(move[1]);
     if (!(move.length() == 2)) {
         cout << "Error 1: " << p1.get_name() << " you entered an invalid input";
         return false;
     }
-    else if (((moveRow < 0) || (moveRow > MAX_GRID_SIZE)) ||
-             ((moveCol < 'A') || (moveCol > 'H'))) {
+    else if (moveRow < 1 || moveRow > MAX_GRID_SIZE || moveCol < 'A' ||
+             moveCol > 'H') {
         cout << "Error 2: " << p1.get_name() << " you entered an invalid position";
         return false;
     }
