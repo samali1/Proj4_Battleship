@@ -99,13 +99,16 @@ void Game::start(char difficulty, int max_rounds) {
         p1.print_opponent_grid();
     }
     if (p1.destroyed()) {
-        cout << "Game over, winner is " << p2name << " in " << roundCounter << "rounds" << endl;;
+        cout << "Game over, winner is " << p2name << " in " << roundCounter << "rounds" << endl;
+        return;
     }
     else if (p2.destroyed()){
         cout << "Game over, winner is " << p1name << " in " << roundCounter << "rounds" << endl;
+        return;
     }
     else {
         cout << "Game over, winner is no one in " << roundCounter << "rounds" << endl;
+        return;
     }
 }
 
