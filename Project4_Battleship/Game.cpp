@@ -59,13 +59,13 @@ string Game::get_move(string player_name) {
 bool Game::check_valid_move(string move) {
     int moveRow = move[0];
     int moveCol = toupper(move[1]) - 65;
-    int lengthMove = move.length();
-    if (lengthMove != 2) {
+    if (move.length() != 2) {
         cout << "Error 1: " << p1.get_name() << " you entered an invalid input";
         return false;
     }
     // fix conditions
-    else if (moveRow > MAX_GRID_SIZE || moveCol > MAX_GRID_SIZE) {
+    else if (((moveRow >= 0) && (moveRow <= MAX_GRID_SIZE-1)) ||
+             ((moveCol >= 0) && (moveCol <= MAX_GRID_SIZE-1))) {
         cout << "Error 2: " << p1.get_name() << " you entered an invalid position";
         return false;
     }
