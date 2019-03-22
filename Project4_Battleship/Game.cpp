@@ -59,15 +59,13 @@ string Game::get_move(string player_name) {
 bool Game::check_valid_move(string move) {
     int moveRow = move[0]-1;
     // 65 is Ascii for "A"
-    int moveCol = (int) toupper(move[1]);
-    moveCol -= 65;
+    char moveCol = toupper(move[1]);
     if (!(move.length() == 2)) {
         cout << "Error 1: " << p1.get_name() << " you entered an invalid input";
         return false;
     }
-    // fix conditions
-    else if (((moveRow >= 0) && (moveRow < MAX_GRID_SIZE)) ||
-             ((moveCol >= 0) && (moveCol < MAX_GRID_SIZE))) {
+    else if (((moveRow < 0) || (moveRow > MAX_GRID_SIZE)) ||
+             ((moveCol < 'A') || (moveCol > 'H'))) {
         cout << "Error 2: " << p1.get_name() << " you entered an invalid position";
         return false;
     }
@@ -84,11 +82,9 @@ void Game::start(char difficulty, int max_rounds) {
         while (!(check_valid_move(p1move))) {
             p1move = get_move(p1name);
         }
-        int p1row = p1move[0];
-        char p1Col = p1move[1] + 65;
-        Position p1MovePos;
-        p1MovePos.set_row(p1row);
-        p1MovePos.set_col(p1Col);
+        char p1row = p1move[0];
+        char p1Col = p1move[1];
+        Position p1MovePos(p1row, p1Col);
         
         p1.attack(p2, p1MovePos);
         
@@ -102,10 +98,10 @@ void Game::start(char difficulty, int max_rounds) {
         p2.print_opponent_grid();
     }
     if (p1.destroyed()) {
-        cout << "Game over, winner is " << p1name << " in " << roundCounter << "rounds";
+        cout << "Game over, winner is " << p2name << " in " << roundCounter << "rounds";
     }
     else if (p2.destroyed()){
-        cout << "Game over, winner is " << p2name << " in " << roundCounter << "rounds";
+        cout << "Game over, winner is " << p1name << " in " << roundCounter << "rounds";
     }
     else {
         cout << "Game over, winner is no one in " << roundCounter << "rounds";
