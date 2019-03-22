@@ -29,10 +29,10 @@ void test_player();
 void test_game();
 
 int main() {
-    // test_position();
-    // test_ship();
+    test_position();
+    test_ship();
     test_player();
-    // test_game();
+    test_game();
     return 0;
 }
 
@@ -425,24 +425,24 @@ void test_game() {
     string invalidMove3 = "BB";
     string invalidMove4 = "0A";
     
-    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove)
+    cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove)
          << endl;
-    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove1)
+    cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove1)
          << endl;
-    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove2)
+    cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove2)
          << endl;
-    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove3)
+    cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove3)
          << endl;
-    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove4)
+    cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove4)
          << endl;
     
     cout << endl;
     
-    testGame.check_valid_move(invalidMove);
-    testGame.check_valid_move(invalidMove1);
-    testGame.check_valid_move(invalidMove2);
-    testGame.check_valid_move(invalidMove3);
-    testGame.check_valid_move(invalidMove4);
+    nonDef.check_valid_move(invalidMove);
+    nonDef.check_valid_move(invalidMove1);
+    nonDef.check_valid_move(invalidMove2);
+    nonDef.check_valid_move(invalidMove3);
+    nonDef.check_valid_move(invalidMove4);
     
     cout << endl;
     
