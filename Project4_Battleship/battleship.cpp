@@ -63,8 +63,56 @@ int main() {
     (Note: you will only play one instance of the game, i.e., after the game ends, 
        the program ends.)
 */
+    
+    Game();
     print_initial_header();
+    string player1name;
+    string player2name = "CPU";
+    cout << "Enter your name: " << player1name << endl;
+    getline(cin, player1name);
+    
+    char userChoice;
+    cout << "Read your grid from file grid1.txt? (y or n):";
+    cin >> userChoice;
     cout << endl;
-    cout << "Enter your name: ";
-    return 0;
+    string grid1;
+    if (userChoice == 'n') {
+        grid1 = "";
+    }
+    else {
+        grid1 = "grid1.txt";
+    }
+    
+    char userChoice2;
+    cout << "Read CPU grid from file grid2.txt? (y or n):";
+    cin >> userChoice2;
+    cout << endl;
+    string grid2;
+    if (userChoice == 'n') {
+        grid2 = "";
+    }
+    else {
+        grid1 = "grid2.txt";
+    }
+    
+    Game battleship(player1name, grid1, player2name, grid2);
+    
+    int gameChoice = get_menu_choice();
+    
+    while (gameChoice == 2) {
+        cout << "Under Construction" << endl;
+        gameChoice = get_menu_choice();
+    }
+    if (gameChoice == 1) {
+        cout << "Starting game with EASY AI" << endl;
+        battleship.start(EASY, MAX_ROUNDS);
+    }
+    if (gameChoice == 3) {
+        cout << "Starting game with CPU EMULATION" << endl;
+        battleship.start(EMULATE, MAX_ROUNDS);
+    }
+    if (gameChoice == 4) {
+        cout << "Starting game with EASY AI" << endl;
+        print_closer();
+    }
 }
