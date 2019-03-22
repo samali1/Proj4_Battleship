@@ -258,14 +258,12 @@ void test_player() {
     
     // testing Default Constructor
     Player p1;
-    p1.init_grid();
     cout << "Expected: \"\", actual: " << p1.get_name() << endl;
     
     cout << endl;
     
     // testing Non-default Constructor
     Player p2("Sameer");
-    p2.init_grid();
     cout << "Expected: \"Sameer\", actual: " << p2.get_name() << endl;
     
     cout << endl;
@@ -296,7 +294,6 @@ void test_player() {
     // testing adding more ships
     
     Player test;
-    test.init_grid();
     
     Position start2('1','A');
     Position end2('1','C');
@@ -357,8 +354,18 @@ void test_player() {
     cout << endl;
     p2.attack(test, onShip1);
     test.print_grid();
+    cout << endl;
+    p2.attack(test, empty);
+    test.print_grid();
+    cout << endl;
     
     // testing Destroyed
+    
+    // testing load_grid_file
+    Player p3("Frank");
+
+//    string filename = "grid1.txt";
+//    p3.load_grid_file(filename);
     
     
 }

@@ -71,7 +71,6 @@ void Player::add_ship(Ship ship) {
     int startCol = shipStart.get_col();
     int endRow = shipEnd.get_row();
     int endCol = shipEnd.get_col();
-    
     if (!(num_ships == MAX_NUM_SHIPS)) {
         if (ship.is_horizontal()) {
             if (endCol < startCol) {
@@ -84,6 +83,7 @@ void Player::add_ship(Ship ship) {
                     grid[startRow][i] = SHIP_LETTER;
                 }
             }
+            ships[num_ships] = ship;
             num_ships++;
             remaining_ships++;
         }
@@ -98,6 +98,7 @@ void Player::add_ship(Ship ship) {
                 grid[j][endCol] = SHIP_LETTER;
                 }
             }
+            ships[num_ships] = ship;
             num_ships++;
             remaining_ships++;
         }
@@ -119,6 +120,7 @@ void Player::attack(Player &opponent, Position pos) {
         int rowVal = pos.get_row();
         int colVal = pos.get_col();
         int shipSize = opponent.ships[i].get_size();
+        
         if (opponent.position_not_hit(pos) && (opponent.ships[i].has_position(pos))) {
             opponent.ships[i].hit();
             opponent.grid[rowVal][colVal] = HIT_LETTER;
@@ -139,25 +141,36 @@ void Player::attack(Player &opponent, Position pos) {
 
 void Player::announce_ship_sunk(int size) {
     if (size == 2) {
-        cout << "Congratulations " << name << "!" << " You sunk a Destroyer!" << endl;
+        cout << "Congratulations " << name << "!" << " You sunk a Destroyer"  << endl;
     }
     else if (size == 3) {
-        cout << "Congratulations " << name << "!" << " You sunk a Submarine!" << endl;
+        cout << "Congratulations " << name << "!" << " You sunk a Submarine"  << endl;
     }
     else if (size == 4) {
-        cout << "Congratulations " << name << "!" << " You sunk a Battleship!" << endl;
+        cout << "Congratulations " << name << "!"
+             << " You sunk a Battleship" << endl;
     }
     else if (size == 5) {
-        cout << "Congratulations " << name << "!" << " You sunk a Carrier!" << endl;
+        cout << "Congratulations " << name << "!" << " You sunk a Carrier"
+             << endl;
     }
 }
 
 bool Player::load_grid_file(string filename) {
     for (int i = 0; i < MAX_NUM_SHIPS; i++){
-        ofstream myfile;
+        ifstream myfile;
         myfile.open (filename);
-        //myfile << add_ship(ships[i]);
-        myfile.close();
+        if (!myfile.fail()) {
+            Position pos1;
+            Position pos2;
+            pos1.read(myfile);
+            pos2.read(myfile);
+            Ship tempShip(pos1, pos2);
+            add_ship(tempShip);
+        }
+        else {
+            return false;
+        }
     }
     return true;
 }
