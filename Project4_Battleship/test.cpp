@@ -32,6 +32,7 @@ int main() {
     test_position();
     test_ship();
     test_player();
+    test_game();
     return 0;
 }
 
@@ -337,7 +338,8 @@ void test_player() {
     
     // testing position_not_hit
     Position onShip('1','A');
-    Position onShip1(6,3);
+    Position onShip1('1','B');
+    Position onShip2('1','c');
     Position empty(1,4);
     Position empty2(7,7);
     
@@ -356,6 +358,12 @@ void test_player() {
     test.print_grid();
     cout << endl;
     p2.attack(test, empty);
+    test.print_grid();
+    cout << endl;
+    p2.attack(test, onShip1);
+    test.print_grid();
+    cout << endl;
+    p2.attack(test, onShip2);
     test.print_grid();
     cout << endl;
     
@@ -377,14 +385,62 @@ void test_player() {
 }
 
 void test_game() {
+    // testing Non-default Constructors
+    string frank = "Frank";
+    Player Frank(frank);
+    string sameer = "Sameer";
+    Player Sameer(sameer);
+    string grid1 = "grid1.txt";
+    string grid2 = "grid2.txt";
+    string grid3 = "yeet.txt";
+    
+    Game nonDef(Frank, grid1, Sameer, grid2);
+    
+    Game nonDef2(Frank, grid1, Sameer, grid3);
+    
+    cout << endl;
+    
     // testing check_valid_move
+    Game testGame;
+    
     string validMove = "1A";
     string validMove1 = "2F";
     string validMove2 = "8H";
     string validMove3 = "8A";
-    string validmove4 = "1H";
-    
+    string validMove4 = "1H";
     string invalidMove = "10A";
     string invalidMove1 = "*B";
-    string invalidMove2 = "B10";
+    string invalidMove2 = "B";
+    
+    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove)
+         << endl;
+    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove1)
+         << endl;
+    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove2)
+         << endl;
+    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove3)
+         << endl;
+    cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove4)
+         << endl;
+    
+    cout << endl;
+    
+    testGame.check_valid_move(invalidMove);
+    cout << endl;
+    testGame.check_valid_move(invalidMove1);
+    cout << endl;
+    testGame.check_valid_move(invalidMove2);
+    cout << endl;
+    
+    cout << endl;
+    
+    // testing getters
+    nonDef.get_p1();
+    nonDef.get_p2();
+    nonDef.get_move("");
+    
+    nonDef2.get_p1();
+    nonDef2.get_p2();
+    nonDef2.get_move(frank);
+    
 }
