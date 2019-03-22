@@ -77,30 +77,37 @@ void Game::start(char difficulty, int max_rounds) {
     int roundCounter = 0;
     string p1name = p1.get_name();
     string p2name = p2.get_name();
-    if (max_rounds <= MAX_ROUNDS) {
-        for (int i = 0; i < max_rounds; i++) {
-            roundCounter += 1;
-            string p1move = get_move(p1name);
-            check_valid_move(p1move);
-            int p1row = p1move[0];
-            char p1Col = p1move[1] + 65;
-            Position p1MovePos;
-            p1MovePos.set_row(p1row);
-            p1MovePos.set_col(p1Col);
-            p1.attack(p2, p1MovePos);
-            opponent_make_move(difficulty);
-            if (p1.destroyed()) {
-                cout << "Game over, winner is " << p1name << " in " << roundCounter << "rounds";
-            }
-            else if (p2.destroyed()){
-                cout << "Game over, winner is " << p2name << " in " << roundCounter << "rounds";
-            }
-            cout << "Your grid" << endl;
-            p1.print_grid();
-            cout << endl;
-            cout << p2name << "'s grid" << endl;
-            p2.print_opponent_grid();
+    while ((roundCounter < max_rounds) && !(p1.destroyed()) && !(p2.destroyed())){
+        roundCounter += 1;
+        string p1move = get_move(p1name);
+        while (!(check_valid_move(p1move))) {
+            p1move = get_move(p1name);
         }
+        int p1row = p1move[0];
+        char p1Col = p1move[1] + 65;
+        Position p1MovePos;
+        p1MovePos.set_row(p1row);
+        p1MovePos.set_col(p1Col);
+        
+        p1.attack(p2, p1MovePos);
+        
+        if (!(p2.destroyed())) {
+            opponent_make_move(difficulty);
+        }
+        cout << "Your grid" << endl;
+        p1.print_grid();
+        cout << endl;
+        cout << p2name << "'s grid" << endl;
+        p2.print_opponent_grid();
+    }
+    if (p1.destroyed()) {
+        cout << "Game over, winner is " << p1name << " in " << roundCounter << "rounds";
+    }
+    else if (p2.destroyed()){
+        cout << "Game over, winner is " << p2name << " in " << roundCounter << "rounds";
+    }
+    else {
+        cout << "Game over, winner is no one in " << roundCounter << "rounds";
     }
 }
 
