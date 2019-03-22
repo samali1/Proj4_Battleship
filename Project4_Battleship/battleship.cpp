@@ -6,7 +6,7 @@
  *
  * Project 4: Battleship
  *
- * Drive of the Battleship game.
+ * Drive of the Battleship game. User can play an entire game. 
  */
 
 #include <iostream>
@@ -94,19 +94,23 @@ int main() {
     
     int gameChoice = get_menu_choice();
     
+    // Choice 2 represents medium diffuculty which is under destruction
     while (gameChoice == 2) {
         cout << "Under Construction" << endl;
         gameChoice = get_menu_choice();
     }
+    // Choice 1 represents the easy diffuculty
     if (gameChoice == 1) {
         cout << "Starting game with EASY AI" << endl;
         battleship.start(EASY, MAX_ROUNDS);
         print_closer();
     }
+    // Choice 3 represents the game with CPU eumlation
     if (gameChoice == 3) {
         cout << "Starting game with CPU EMULATION" << endl;
         battleship.start(EMULATE, MAX_ROUNDS);
     }
+    // Choice 4 quits the game
     if (gameChoice == 4) {
         print_closer();
     }

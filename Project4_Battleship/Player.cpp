@@ -9,7 +9,9 @@
  *
  * Project 4: Battleship
  *
- * Player implementation. ***FIX DESC***
+ * Implementation of the Player aspect of Battleship, where each player has
+ * a certain amount of ships (of Ship class). The game is ran with two
+ * players. 
  */
 
 //he
@@ -145,16 +147,22 @@ void Player::attack(Player &opponent, Position pos) {
 }
 
 void Player::announce_ship_sunk(int size) {
+    // Size 2 represents a Destroyer
     if (size == 2) {
-        cout << "Congratulations " << name << "!" << " You sunk a Destroyer"  << endl;
+        cout << "Congratulations " << name << "!"
+             << " You sunk a Destroyer"  << endl;
     }
+    // Size 3 represents a Submarine
     else if (size == 3) {
-        cout << "Congratulations " << name << "!" << " You sunk a Submarine"  << endl;
+        cout << "Congratulations " << name << "!"
+             << " You sunk a Submarine"  << endl;
     }
+    // Size 4 represents a Battleship
     else if (size == 4) {
         cout << "Congratulations " << name << "!"
              << " You sunk a Battleship" << endl;
     }
+    // Size 5 represents a Carrier
     else if (size == 5) {
         cout << "Congratulations " << name << "!" << " You sunk a Carrier"
              << endl;

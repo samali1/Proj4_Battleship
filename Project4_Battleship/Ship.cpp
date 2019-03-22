@@ -9,7 +9,9 @@
  *
  * Project 4: Battleship
  *
- * Ship shit
+ * Implementing the Ships aspect of Battleship, where each ship is
+ * constructed from two positions (Position class). The ship has properties
+ * that are used in gameplay.
  */
 
 #include <cmath>
@@ -46,7 +48,7 @@ Ship::Ship(Position start_in, Position end_in) {
             size = endRow - startRow + 1;
         }
         else if (endRow < startRow) {
-            size = startRow - endRow +1;
+            size = startRow - endRow + 1;
         }
     }
     
@@ -84,10 +86,12 @@ bool Ship::has_position(Position pos) {
     int endRow = end.get_row();
     int endCol = end.get_col();
     
-    if (((posRow >= startRow) && (posRow <= endRow)) && ((posCol >= startCol) && (posCol <= endCol))) {
+    if (((posRow >= startRow) && (posRow <= endRow)) &&
+        ((posCol >= startCol) && (posCol <= endCol))) {
         return true;
     }
-    else if (((posRow >= endRow) && (posRow <= startRow)) && ((posCol >= endCol) && (posCol <= startCol))) {
+    else if (((posRow >= endRow) && (posRow <= startRow)) &&
+             ((posCol >= endCol) && (posCol <= startCol))) {
         return true;
     }
     else{

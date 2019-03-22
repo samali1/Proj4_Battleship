@@ -9,7 +9,8 @@
  *
  * Project 4: Battleship
  *
- * Implementing the position aspect of Battleship.
+ * Implementing the position aspect of Battleship, where each position has the
+ * format of (Row,Col). 
  */
 
 #include "Position.h"

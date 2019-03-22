@@ -9,7 +9,8 @@
  *
  * Project 4: Battleship
  *
- * <#description#>
+ * Implements the Game portion of Battleship, where Game has several aspects
+ * to run Battleship correctly. 
  */
 
 #include <fstream>
@@ -62,6 +63,7 @@ bool Game::check_valid_move(string move) {
     moveRow = moveRow - 48;
     char moveCol = toupper(move[1]);
 
+    // The length of the string move = 2
     if (move.length() != 2) {
         cout << p1.get_name() << " you entered an invalid input" << endl;
         return false;
@@ -77,8 +79,9 @@ void Game::start(char difficulty, int max_rounds) {
     int roundCounter = 0;
     string p1name = p1.get_name();
     string p2name = p2.get_name();
-    while ((roundCounter < max_rounds) && !(p1.destroyed()) && !(p2.destroyed())){
-        roundCounter += 1;
+    while ((roundCounter < max_rounds) && !(p1.destroyed())
+            && !(p2.destroyed())){
+        roundCounter++;
         string p1move = get_move(p1name);
         while (!(check_valid_move(p1move))) {
             p1move = get_move(p1name);
@@ -99,15 +102,18 @@ void Game::start(char difficulty, int max_rounds) {
         p1.print_opponent_grid();
     }
     if (p1.destroyed()) {
-        cout << "Game over, winner is " << p2name << " in " << roundCounter << "rounds" << endl;
+        cout << "Game over, winner is " << p2name << " in "
+             << roundCounter << "rounds" << endl;
         return;
     }
     else if (p2.destroyed()){
-        cout << "Game over, winner is " << p1name << " in " << roundCounter << "rounds" << endl;
+        cout << "Game over, winner is " << p1name << " in "
+             << roundCounter << "rounds" << endl;
         return;
     }
     else {
-        cout << "Game over, winner is no one in " << roundCounter << "rounds" << endl;
+        cout << "Game over, winner is no one in "
+             << roundCounter << "rounds" << endl;
         return;
     }
 }
