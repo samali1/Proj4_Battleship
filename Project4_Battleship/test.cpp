@@ -413,7 +413,6 @@ void test_game() {
     string invalidMove2 = "B";
     string invalidMove3 = "BB";
     string invalidMove4 = "0A";
-    string invalidMove5 = "
     
     cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove)
          << endl;
@@ -429,11 +428,10 @@ void test_game() {
     cout << endl;
     
     testGame.check_valid_move(invalidMove);
-    cout << endl;
     testGame.check_valid_move(invalidMove1);
-    cout << endl;
     testGame.check_valid_move(invalidMove2);
-    cout << endl;
+    testGame.check_valid_move(invalidMove3);
+    testGame.check_valid_move(invalidMove4);
     
     cout << endl;
     
