@@ -107,7 +107,6 @@ int main() {
         battleship.start(EMULATE, MAX_ROUNDS);
     }
     if (gameChoice == 4) {
-        cout << "Starting game with EASY AI" << endl;
         print_closer();
     }
 }
