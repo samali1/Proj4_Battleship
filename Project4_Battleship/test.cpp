@@ -29,10 +29,10 @@ void test_player();
 void test_game();
 
 int main() {
-    test_position();
-    test_ship();
+    // test_position();
+    // test_ship();
     test_player();
-    test_game();
+    // test_game();
     return 0;
 }
 
@@ -342,6 +342,7 @@ void test_player() {
     Position onShip2('1','c');
     Position empty(1,4);
     Position empty2(7,7);
+    Position outOfGrid('0','I');
     
     cout << "Expected: 1, actual: " << test.position_not_hit(onShip) << endl;
     cout << "Expected: 1, actual: " << test.position_not_hit(onShip1) << endl;
@@ -357,7 +358,7 @@ void test_player() {
     p2.attack(test, onShip);
     test.print_grid();
     cout << endl;
-    p2.attack(test, empty);
+    p2.attack(test, empty2);
     test.print_grid();
     cout << endl;
     p2.attack(test, onShip1);
@@ -366,7 +367,14 @@ void test_player() {
     p2.attack(test, onShip2);
     test.print_grid();
     cout << endl;
+    p2.attack(test, empty);
+    test.print_grid();
+    cout << endl;
+    p2.attack(test, outOfGrid);
+    test.print_grid();
+    cout << endl;
     
+    cout << endl;
     // testing Destroyed
     
     // testing load_grid_file
@@ -393,10 +401,13 @@ void test_game() {
     string grid1 = "grid1.txt";
     string grid2 = "grid2.txt";
     string grid3 = "yeet.txt";
+    string grid4 = "";
     
     Game nonDef(Frank, grid1, Sameer, grid2);
+    Game badNonDef2(Frank, grid1, Sameer, grid3);
+    Game emptyDef(Frank, grid1, Sameer, grid4);
+    Game emptyDef1(Frank, grid4, Sameer, grid2);
     
-    Game nonDef2(Frank, grid1, Sameer, grid3);
     
     cout << endl;
     
@@ -440,8 +451,20 @@ void test_game() {
     nonDef.get_p2();
     nonDef.get_move("");
     
-    nonDef2.get_p1();
-    nonDef2.get_p2();
-    nonDef2.get_move(frank);
+    badNonDef2.get_p1();
+    badNonDef2.get_p2();
+    badNonDef2.get_move(frank);
+    
+    emptyDef.get_p1();
+    emptyDef.get_p2();
+    emptyDef.get_move(sameer);
+    
+    emptyDef1.get_p1();
+    emptyDef1.get_p2();
+    emptyDef1.get_move("");
+    
+    emptyDef1.get_p1();
+    emptyDef1.get_p2();
+    emptyDef1.get_move("Yeet");
     
 }
