@@ -348,16 +348,16 @@ void test_player() {
     
     cout << endl;
     
-//    // testing attack
-//    p2.attack(test, empty);
-//    test.print_grid();
-//    cout << endl;
-//    p2.attack(test, onShip);
-//    test.print_grid();
-//    cout << endl;
-//    p2.attack(test, empty);
-//    test.print_grid();
-//    cout << endl;
+    // testing attack
+    p2.attack(test, empty);
+    test.print_grid();
+    cout << endl;
+    p2.attack(test, onShip);
+    test.print_grid();
+    cout << endl;
+    p2.attack(test, empty);
+    test.print_grid();
+    cout << endl;
     
     // testing Destroyed
     
@@ -367,6 +367,12 @@ void test_player() {
     string filename = "grid1.txt";
     p3.load_grid_file(filename);
     p3.print_grid();
+    cout << endl;
     
+    Player p4("Frank2");
+
+    string filename1 = "grid2.txt";
+    p4.load_grid_file(filename1);
+    p4.print_grid();
 }
 

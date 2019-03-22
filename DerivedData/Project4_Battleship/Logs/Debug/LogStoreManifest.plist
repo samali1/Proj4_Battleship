@@ -5,6 +5,239 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>07BB409B-386E-475D-8B32-9F1E03F9FB02</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>07BB409B-386E-475D-8B32-9F1E03F9FB02.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917165.63087499</real>
+			<key>timeStoppedRecording</key>
+			<real>574917186.28342903</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>07BB409B-386E-475D-8B32-9F1E03F9FB02</string>
+		</dict>
+		<key>160ACD2F-F979-415A-98D0-12C4A152C366</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>160ACD2F-F979-415A-98D0-12C4A152C366.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917411.89935195</real>
+			<key>timeStoppedRecording</key>
+			<real>574917413.27716601</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>160ACD2F-F979-415A-98D0-12C4A152C366</string>
+		</dict>
+		<key>1AEE5D81-78A1-4CBC-8BD4-815192009567</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>1AEE5D81-78A1-4CBC-8BD4-815192009567.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917323.43158197</real>
+			<key>timeStoppedRecording</key>
+			<real>574917324.75533199</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>1AEE5D81-78A1-4CBC-8BD4-815192009567</string>
+		</dict>
+		<key>3D5E56C6-6555-47D2-93FF-33E9FBDA9938</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>3D5E56C6-6555-47D2-93FF-33E9FBDA9938.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917292.55711102</real>
+			<key>timeStoppedRecording</key>
+			<real>574917294.05753005</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>3D5E56C6-6555-47D2-93FF-33E9FBDA9938</string>
+		</dict>
+		<key>797F166F-6BB9-4663-AA95-65FCCDFE35E5</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>797F166F-6BB9-4663-AA95-65FCCDFE35E5.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917056.41415703</real>
+			<key>timeStoppedRecording</key>
+			<real>574917069.65845299</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>797F166F-6BB9-4663-AA95-65FCCDFE35E5</string>
+		</dict>
+		<key>829B1D78-D0E9-41E6-9035-DE0C89EC5F1D</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>829B1D78-D0E9-41E6-9035-DE0C89EC5F1D.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917337.13516903</real>
+			<key>timeStoppedRecording</key>
+			<real>574917338.55378699</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>829B1D78-D0E9-41E6-9035-DE0C89EC5F1D</string>
+		</dict>
+		<key>9FAA3D9E-1F26-4DF4-B715-1BF959DA4087</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>9FAA3D9E-1F26-4DF4-B715-1BF959DA4087.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917354.25691998</real>
+			<key>timeStoppedRecording</key>
+			<real>574917355.71621203</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>9FAA3D9E-1F26-4DF4-B715-1BF959DA4087</string>
+		</dict>
+		<key>E5D7CB34-4AF2-4C4B-8128-CBB584D5871E</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>E5D7CB34-4AF2-4C4B-8128-CBB584D5871E.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Project4_Battleship project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Project4_Battleship</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug Project4_Battleship</string>
+			<key>timeStartedRecording</key>
+			<real>574917028.95465302</real>
+			<key>timeStoppedRecording</key>
+			<real>574917038.24846804</real>
+			<key>title</key>
+			<string>Debug Project4_Battleship</string>
+			<key>uniqueIdentifier</key>
+			<string>E5D7CB34-4AF2-4C4B-8128-CBB584D5871E</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
