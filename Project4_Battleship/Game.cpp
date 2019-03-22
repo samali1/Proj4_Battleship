@@ -77,7 +77,7 @@ void Game::start(char difficulty, int max_rounds) {
     int roundCounter = 0;
     string p1name = p1.get_name();
     string p2name = p2.get_name();
-    while ((roundCounter <= max_rounds) && !(p1.destroyed()) && !(p2.destroyed())){
+    while ((roundCounter < max_rounds) && !(p1.destroyed()) && !(p2.destroyed())){
         roundCounter += 1;
         string p1move = get_move(p1name);
         while (!(check_valid_move(p1move))) {

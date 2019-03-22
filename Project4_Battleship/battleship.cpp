@@ -101,6 +101,7 @@ int main() {
     if (gameChoice == 1) {
         cout << "Starting game with EASY AI" << endl;
         battleship.start(EASY, MAX_ROUNDS);
+        print_closer();
     }
     if (gameChoice == 3) {
         cout << "Starting game with CPU EMULATION" << endl;
