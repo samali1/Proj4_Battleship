@@ -63,7 +63,6 @@ int main() {
     (Note: you will only play one instance of the game, i.e., after the game ends, 
        the program ends.)
 */
-    
     Game();
     print_initial_header();
     string player1name;
@@ -75,11 +74,8 @@ int main() {
     cout << "Read your grid from file grid1.txt? (y or n):";
     cin >> userChoice;
     cout << endl;
-    string grid1;
-    if (userChoice == 'n') {
-        grid1 = "";
-    }
-    else {
+    string grid1 = "";
+    if (userChoice == 'y') {
         grid1 = "grid1.txt";
     }
     
@@ -87,15 +83,14 @@ int main() {
     cout << "Read CPU grid from file grid2.txt? (y or n):";
     cin >> userChoice2;
     cout << endl;
-    string grid2;
-    if (userChoice == 'n') {
-        grid2 = "";
-    }
-    else {
-        grid1 = "grid2.txt";
+    string grid2 = "";
+    if (userChoice2 == 'y') {
+        grid2 = "grid2.txt";
     }
     
-    Game battleship(player1name, grid1, player2name, grid2);
+    Player p1(player1name);
+    Player p2(player2name);
+    Game battleship(p1, grid1, p2, grid2);
     
     int gameChoice = get_menu_choice();
     
