@@ -411,6 +411,9 @@ void test_game() {
     string invalidMove = "10A";
     string invalidMove1 = "*B";
     string invalidMove2 = "B";
+    string invalidMove3 = "BB";
+    string invalidMove4 = "0A";
+    string invalidMove5 = "
     
     cout << "Expected: 1, actual: " << testGame.check_valid_move(validMove)
          << endl;
