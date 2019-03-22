@@ -158,19 +158,20 @@ void Player::announce_ship_sunk(int size) {
 
 bool Player::load_grid_file(string filename) {
     ifstream myfile;
-    myfile.open (filename);
-    
-    while (!(num_ships > MAX_NUM_SHIPS)) {
-        if (!myfile.fail()) {
-            Position pos1;
-            Position pos2;
-            myfile >> pos1 >> pos2;
+    myfile.open(filename);
+    if (!myfile.is_open()) {
+        return false;
+    }
+    if (!myfile.fail()) {
+        Position pos1;
+        Position pos2;
+        while (myfile >> pos1 >> pos2) {
             Ship tempShip(pos1, pos2);
             add_ship(tempShip);
         }
-        else {
-            return false;
-        }
+    }
+    else {
+        return false;
     }
     return true;
 }
