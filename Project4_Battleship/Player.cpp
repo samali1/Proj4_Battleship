@@ -121,18 +121,21 @@ void Player::attack(Player &opponent, Position pos) {
         int colVal = pos.get_col();
         int shipSize = opponent.ships[i].get_size();
         
-        if (opponent.position_not_hit(pos) && (opponent.ships[i].has_position(pos))) {
-            opponent.ships[i].hit();
-            opponent.grid[rowVal][colVal] = HIT_LETTER;
-            opponent_grid[rowVal][colVal] = HIT_LETTER;
-            cout << name << " " << pos << " hit" << endl;
-            if (opponent.ships[i].has_sunk()) {
-                opponent.remaining_ships--;
-                announce_ship_sunk(shipSize);
+        if (opponent.ships[i].has_position(pos)) {
+            if (opponent.position_not_hit(pos) && (opponent.ships[i].has_position(pos))) {
+                opponent.ships[i].hit();
+                opponent.grid[rowVal][colVal] = HIT_LETTER;
+                opponent_grid[rowVal][colVal] = HIT_LETTER;
+                cout << name << " " << pos << " hit" << endl;
+                if (opponent.ships[i].has_sunk()) {
+                    opponent.remaining_ships--;
+                    announce_ship_sunk(shipSize);
+                }
             }
         }
-        else {
-            opponent.grid[rowVal][colVal] = MISS_LETTER;
+        else if (!opponent.ships[i].has_position(pos)) {
+            if (position_not_hit(pos))
+                opponent.grid[rowVal][colVal] = MISS_LETTER;
             opponent_grid[rowVal][colVal] = MISS_LETTER;
             cout << name << " " << pos << " miss" << endl;
         }
@@ -157,14 +160,14 @@ void Player::announce_ship_sunk(int size) {
 }
 
 bool Player::load_grid_file(string filename) {
-    for (int i = 0; i < MAX_NUM_SHIPS; i++){
-        ifstream myfile;
-        myfile.open (filename);
+    ifstream myfile;
+    myfile.open (filename);
+    
+    while (!(num_ships > MAX_NUM_SHIPS)) {
         if (!myfile.fail()) {
             Position pos1;
             Position pos2;
-            pos1.read(myfile);
-            pos2.read(myfile);
+            myfile >> pos1 >> pos2;
             Ship tempShip(pos1, pos2);
             add_ship(tempShip);
         }

@@ -25,14 +25,14 @@ Game::Game() {
 Game::Game(Player player1, string grid1, Player player2, string grid2) {
     p1 = player1;
     p2 = player2;
-    if (grid1 == "" || p1.load_grid_file(grid1)) {
+    if (grid1 == "" || !p1.load_grid_file(grid1)) {
         generate_random_grid(p1);
         cout << "Generating random grid for " << p1.get_name();
     }
     else {
         p1.load_grid_file(grid1);
     }
-    if (grid2 == "" || p2.load_grid_file(grid2)) {
+    if (grid2 == "" || !p2.load_grid_file(grid2)) {
         generate_random_grid(p2);
         cout << "Generating random grid for " << p2.get_name();
     }
@@ -59,12 +59,13 @@ string Game::get_move(string player_name) {
 bool Game::check_valid_move(string move) {
     int moveRow = move[0];
     int moveCol = toupper(move[1]) - 65;
-    int lengthMove = move.size();
+    int lengthMove = move.length();
     if (lengthMove != 2) {
         cout << "Error 1: " << p1.get_name() << " you entered an invalid input";
         return false;
     }
-    else if (moveRow <= MAX_GRID_SIZE || moveCol <= MAX_GRID_SIZE) {
+    // fix conditions
+    else if (moveRow > MAX_GRID_SIZE || moveCol > MAX_GRID_SIZE) {
         cout << "Error 2: " << p1.get_name() << " you entered an invalid position";
         return false;
     }

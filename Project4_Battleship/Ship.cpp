@@ -84,10 +84,10 @@ bool Ship::has_position(Position pos) {
     int endRow = end.get_row();
     int endCol = end.get_col();
     
-    if (((posRow >= startRow) && (posRow <= endRow)) && ((posCol >= startCol) && (posCol <= endCol))) {
+    if (((posRow >= startRow) && (posCol >= startCol)) && ((posRow <= endRow) && (posCol <= endCol))) {
         return true;
     }
-    else if (((posRow >= endRow) && (posRow <= startRow)) && ((posCol >= endCol) && (posCol <= startCol))) {
+    else if (((posRow >= endRow) && (posCol <= endCol)) && ((posRow >= startRow) && (posCol <= endCol))) {
         return true;
     }
     else{

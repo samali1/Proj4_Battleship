@@ -29,8 +29,8 @@ void test_player();
 void test_game();
 
 int main() {
-//    test_position();
-//    test_ship();
+    test_position();
+    test_ship();
     test_player();
     return 0;
 }
@@ -348,25 +348,25 @@ void test_player() {
     
     cout << endl;
     
-    // testing attack
-    p2.attack(test, empty);
-    test.print_grid();
-    cout << endl;
-    p2.attack(test, onShip1);
-    test.print_grid();
-    cout << endl;
-    p2.attack(test, empty);
-    test.print_grid();
-    cout << endl;
+//    // testing attack
+//    p2.attack(test, empty);
+//    test.print_grid();
+//    cout << endl;
+//    p2.attack(test, onShip);
+//    test.print_grid();
+//    cout << endl;
+//    p2.attack(test, empty);
+//    test.print_grid();
+//    cout << endl;
     
     // testing Destroyed
     
     // testing load_grid_file
     Player p3("Frank");
 
-//    string filename = "grid1.txt";
-//    p3.load_grid_file(filename);
-    
+    string filename = "grid1.txt";
+    p3.load_grid_file(filename);
+    p3.print_grid();
     
 }
 
