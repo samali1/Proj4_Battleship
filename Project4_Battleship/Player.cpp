@@ -137,10 +137,10 @@ void Player::attack(Player &opponent, Position pos) {
                 
                 return;
             }
-            opponent.grid[rowVal][colVal] = MISS_LETTER;
-            opponent_grid[rowVal][colVal] = MISS_LETTER;
-            cout << name << " " << pos << " miss" << endl;
         }
+        opponent.grid[rowVal][colVal] = MISS_LETTER;
+        opponent_grid[rowVal][colVal] = MISS_LETTER;
+        cout << name << " " << pos << " miss" << endl;
     }
     return;
 }
