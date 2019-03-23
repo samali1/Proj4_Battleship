@@ -163,6 +163,12 @@ void test_ship() {
     Position end('1','C');
     Position pos('1','b');
     Position pos1('2','A');
+    Position pos2('1','a');
+    Position pos3('1','c');
+    Position pos4('1','h');
+    Position pos5('8','a');
+    Position pos6('8','H');
+    
     Ship nonDefault(start, end);
     
     // testing Constructors
@@ -180,7 +186,18 @@ void test_ship() {
     cout << "Position (1,B) is in the range, expect: 1, actual: "
          << nonDefault.has_position(pos) << endl;
     cout << "Position (2,A) is not in the range, expect: 0, actual: "
-    << nonDefault.has_position(pos1) << endl;
+         << nonDefault.has_position(pos1) << endl;
+    cout << "Position (1,A) is in the range, expect: 1, actual: "
+    << nonDefault.has_position(pos2) << endl;
+    cout << "Position (1,C) is in the range, expect: 1, actual: "
+    << nonDefault.has_position(pos3) << endl;
+    cout << "Position (1,H) is not in the range, expect: 0, actual: "
+    << nonDefault.has_position(pos4) << endl;
+    cout << "Position (8,A) is not in the range, expect: 0, actual: "
+    << nonDefault.has_position(pos5) << endl;
+    cout << "Position (8,H) is not in the range, expect: 0, actual: "
+    << nonDefault.has_position(pos6) << endl;
+    
     
     cout << endl;
     
@@ -374,6 +391,26 @@ void test_player() {
     test.print_grid();
     cout << endl;
     
+    // testing more attack
+    
+    Position anotherShip('5','C');
+    Position anotherShip1('5','D');
+    Position anotherShip2('5','E');
+    Position anotherShip3('5','F');
+    
+    p2.attack(test, anotherShip);
+    cout << endl;
+    p2.attack(test, anotherShip1);
+    cout << endl;
+    p2.attack(test, anotherShip2);
+    cout << endl;
+    p2.attack(test, anotherShip3);
+    cout << endl;
+    test.print_grid();
+    
+    test.attack(p2, onShip);
+    test.print_opponent_grid();
+    
     cout << endl;
     // testing Destroyed
     
@@ -402,12 +439,16 @@ void test_game() {
     string grid2 = "grid2.txt";
     string grid3 = "yeet.txt";
     string grid4 = "";
+    string grid5 = " ";
     
     Game nonDef(Frank, grid1, Sameer, grid2);
     Game badNonDef2(Frank, grid1, Sameer, grid3);
     Game emptyDef(Frank, grid1, Sameer, grid4);
     Game emptyDef1(Frank, grid4, Sameer, grid2);
+    Game emptyDef2(Frank, grid4, Sameer, grid5);
     
+    // more testing for Constructor
+    Game goodGame(Sameer, grid1, Frank, grid2);
     
     cout << endl;
     
