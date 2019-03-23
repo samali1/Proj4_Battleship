@@ -81,7 +81,6 @@ void Game::start(char difficulty, int max_rounds) {
     string p1name = p1.get_name();
     string p2name = p2.get_name();
     while ((roundCounter < max_rounds) && !p1.destroyed() && !p2.destroyed()){
-        roundCounter++;
         string p1move = get_move(p1name);
         while (!(check_valid_move(p1move))) {
             p1move = get_move(p1name);
@@ -98,6 +97,7 @@ void Game::start(char difficulty, int max_rounds) {
         cout << endl;
         cout << p2name << "'s grid" << endl;
         p1.print_opponent_grid();
+        roundCounter++;
     }
     if (p2.destroyed()){
         cout << "Game over, winner is " << p1name << " in "
