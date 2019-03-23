@@ -102,15 +102,15 @@ void Game::start(char difficulty, int max_rounds) {
     }
     if (p2.destroyed()){
         cout << "Game over, winner is " << p1name << " in "
-        << roundCounter << "rounds" << endl;
+        << roundCounter << " rounds" << endl;
     }
     else if (p1.destroyed()) {
         cout << "Game over, winner is " << p2name << " in "
-        << roundCounter << "rounds" << endl;
+        << roundCounter << " rounds" << endl;
     }
     else {
         cout << "Game over, winner is no one in "
-             << roundCounter << "rounds" << endl;
+             << roundCounter << " rounds" << endl;
     }
     return;
 }
