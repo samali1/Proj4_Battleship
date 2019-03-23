@@ -81,41 +81,39 @@ void Game::start(char difficulty, int max_rounds) {
     string p2name = p2.get_name();
     while ((roundCounter < max_rounds) && !(p1.destroyed())
             && !(p2.destroyed())){
-        roundCounter++;
         string p1move = get_move(p1name);
-        while (!(check_valid_move(p1move))) {
-            p1move = get_move(p1name);
+        if (check_valid_move(p1move)) {
+            roundCounter++;
+            char p1row = p1move[0];
+            char p1Col = p1move[1];
+            Position p1MovePos(p1row, p1Col);
+            
+            p1.attack(p2, p1MovePos);
+            
+            if (!p2.destroyed()) {
+                opponent_make_move(difficulty);
+            }
+            cout << "Your grid" << endl;
+            p1.print_grid();
+            cout << endl;
+            cout << p2name << "'s grid" << endl;
+            p1.print_opponent_grid();
         }
-        char p1row = p1move[0];
-        char p1Col = p1move[1];
-        Position p1MovePos(p1row, p1Col);
         
-        p1.attack(p2, p1MovePos);
-        
-        if (!p2.destroyed()) {
-            opponent_make_move(difficulty);
-        }
-        cout << "Your grid" << endl;
-        p1.print_grid();
-        cout << endl;
-        cout << p2name << "'s grid" << endl;
-        p1.print_opponent_grid();
     }
-    if (p1.destroyed()) {
-        cout << "Game over, winner is " << p2name << " in "
-             << roundCounter << "rounds" << endl;
-        return;
-    }
-    else if (p2.destroyed()){
+    if (p2.destroyed()){
         cout << "Game over, winner is " << p1name << " in "
-             << roundCounter << "rounds" << endl;
-        return;
+        << roundCounter << "rounds" << endl;
+    }
+    else if (p1.destroyed()) {
+        cout << "Game over, winner is " << p2name << " in "
+        << roundCounter << "rounds" << endl;
     }
     else {
         cout << "Game over, winner is no one in "
              << roundCounter << "rounds" << endl;
-        return;
     }
+    return;
 }
 
 // Your code goes above this line.
