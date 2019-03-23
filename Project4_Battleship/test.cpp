@@ -460,11 +460,13 @@ void test_game() {
     string validMove2 = "8H";
     string validMove3 = "8A";
     string validMove4 = "1H";
+    string validMove5 = "3c";
     string invalidMove = "10A";
     string invalidMove1 = "*B";
     string invalidMove2 = "B";
     string invalidMove3 = "BB";
     string invalidMove4 = "0A";
+    string invalidMove5 = "18";
     
     cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove)
          << endl;
@@ -476,6 +478,8 @@ void test_game() {
          << endl;
     cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove4)
          << endl;
+    cout << "Expected: 1, actual: " << nonDef.check_valid_move(validMove5)
+         << endl;
     
     cout << endl;
     
@@ -484,6 +488,7 @@ void test_game() {
     nonDef.check_valid_move(invalidMove2);
     nonDef.check_valid_move(invalidMove3);
     nonDef.check_valid_move(invalidMove4);
+    nonDef.check_valid_move(invalidMove5);
     
     cout << endl;
     
