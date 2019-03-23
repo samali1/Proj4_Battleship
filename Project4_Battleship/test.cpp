@@ -359,7 +359,6 @@ void test_player() {
     Position onShip2('1','c');
     Position empty(1,4);
     Position empty2(7,7);
-    Position outOfGrid('0','I');
     
     cout << "Expected: 1, actual: " << test.position_not_hit(onShip) << endl;
     cout << "Expected: 1, actual: " << test.position_not_hit(onShip1) << endl;
@@ -390,9 +389,10 @@ void test_player() {
     p2.attack(test, empty);
     test.print_grid();
     cout << endl;
-    p2.attack(test, outOfGrid);
-    test.print_grid();
-    cout << endl;
+    
+    // testing edge cases
+    Position edgeCase(0,0);
+    
     
     // testing more attack
     
@@ -438,6 +438,8 @@ void test_game() {
     Player Frank(frank);
     string sameer = "Sameer";
     Player Sameer(sameer);
+    Player p1;
+    Player p2;
     string grid1 = "grid1.txt";
     string grid2 = "grid2.txt";
     string grid3 = "yeet.txt";
@@ -449,6 +451,11 @@ void test_game() {
     Game emptyDef(Frank, grid1, Sameer, grid4);
     Game emptyDef1(Frank, grid4, Sameer, grid2);
     Game emptyDef2(Frank, grid4, Sameer, grid5);
+    Game gameTwo(p1, "grid1.txt", p2, "grid2.txt");
+    Game gameThree(Frank, "", p2, "grid2.txt");
+    Game gameFour(p1, "", p2, "");
+    Game gameFive(p1, "grid1.txt", Sameer, "");
+    
     
     // more testing for Constructor
     Game goodGame(Sameer, grid1, Frank, grid2);
@@ -495,25 +502,89 @@ void test_game() {
     
     cout << endl;
     
-    // testing getters
+    // trying to test Game again
+    Game gameOne;
+    Game();
+    
+    cout << gameOne.get_p1().get_name();
+    
+    // testing getters part 2 (pls work for fuck's sake)
+    
+    cout << gameOne.get_p1().get_name();
+    cout << gameOne.get_p2().get_name();
+    cout << gameTwo.get_p1().get_name();
+    cout << gameTwo.get_p2().get_name();
+    cout << gameThree.get_p1().get_name();
+    cout << gameThree.get_p2().get_name();
+    cout << gameFour.get_p1().get_name();
+    cout << gameFour.get_p2().get_name();
+    cout << gameFive.get_p1().get_name();
+    cout << gameFive.get_p2().get_name();
+    
+    cout << endl;
+    
+    cout << gameOne.get_p1().get_num_ships();
+    cout << gameOne.get_p2().get_num_ships();
+    cout << gameTwo.get_p1().get_num_ships();
+    cout << gameTwo.get_p2().get_num_ships();
+    cout << gameThree.get_p1().get_num_ships();
+    cout << gameThree.get_p2().get_num_ships();
+    cout << gameFour.get_p1().get_num_ships();
+    cout << gameFour.get_p2().get_num_ships();
+    cout << gameFive.get_p1().get_num_ships();
+    cout << gameFive.get_p2().get_num_ships();
+    
+    cout << endl;
+    
+    cout << gameOne.get_p1().get_remaining_ships();
+    cout << gameOne.get_p2().get_remaining_ships();
+    cout << gameTwo.get_p1().get_remaining_ships();
+    cout << gameTwo.get_p2().get_remaining_ships();
+    cout << gameThree.get_p1().get_remaining_ships();
+    cout << gameThree.get_p2().get_remaining_ships();
+    cout << gameFour.get_p1().get_remaining_ships();
+    cout << gameFour.get_p2().get_remaining_ships();
+    cout << gameFive.get_p1().get_remaining_ships();
+    cout << gameFive.get_p2().get_remaining_ships();
+    
+    cout << endl;
+    
+    cout << "Printing the grids of player 1 and player 2" << endl;
+    gameOne.get_p1().print_grid();
+    cout << endl;
+    gameOne.get_p2().print_grid();
+    cout << endl;
+    gameTwo.get_p1().print_grid();
+    cout << endl;
+    gameTwo.get_p2().print_grid();
+    cout << endl;
+    gameThree.get_p1().print_grid();
+    cout << endl;
+    gameThree.get_p2().print_grid();
+    cout << endl;
+    gameFive.get_p1().print_grid();
+    cout << endl;
+    gameFive.get_p2().print_grid();
+    cout << endl;
+    
+    
+    // testing Game getters (?)
     nonDef.get_p1();
     nonDef.get_p2();
-    nonDef.get_move("");
     
     badNonDef2.get_p1();
     badNonDef2.get_p2();
-    badNonDef2.get_move(frank);
     
     emptyDef.get_p1();
     emptyDef.get_p2();
-    emptyDef.get_move(sameer);
     
     emptyDef1.get_p1();
     emptyDef1.get_p2();
-    emptyDef1.get_move("");
     
     emptyDef1.get_p1();
     emptyDef1.get_p2();
-    emptyDef1.get_move("Yeet");
+    
+    testGame.get_p1();
+    testGame.get_p2();
     
 }

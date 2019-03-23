@@ -59,7 +59,7 @@ string Game::get_move(string player_name) {
 
 bool Game::check_valid_move(string move) {
     int moveRow = (int) move[0];
-    // 49 is the ASCII value for '0'
+    // 48 is the ASCII value for '0'
     moveRow = moveRow - 48;
     char moveCol = toupper(move[1]);
 
