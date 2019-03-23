@@ -378,6 +378,9 @@ void test_player() {
     p2.attack(test, empty2);
     test.print_grid();
     cout << endl;
+    p2.attack(test, onShip);
+    test.print_grid();
+    cout << endl;
     p2.attack(test, onShip1);
     test.print_grid();
     cout << endl;
