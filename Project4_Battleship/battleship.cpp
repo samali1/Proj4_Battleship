@@ -4,6 +4,9 @@
  * battleship.cpp
  * Project UID 4cd2d66df3154b6c8b0ff27aa6791edb
  *
+ * Sameer Ali & Yaozong Huang
+ * samali & yaozongh
+ *
  * Project 4: Battleship
  *
  * Drive of the Battleship game. User can play an entire game. 
