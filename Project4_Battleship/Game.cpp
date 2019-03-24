@@ -30,15 +30,9 @@ Game::Game(Player player1, string grid1, Player player2, string grid2) {
         generate_random_grid(p1);
         cout << "Generating random grid for " << p1.get_name() << endl;
     }
-    else {
-        p1.load_grid_file(grid1);
-    }
     if (grid2 == "" || !p2.load_grid_file(grid2)) {
         generate_random_grid(p2);
         cout << "Generating random grid for " << p2.get_name() << endl;
-    }
-    else {
-        p2.load_grid_file(grid1);
     }
 }
 
